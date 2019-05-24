@@ -1,0 +1,15 @@
+.navigationBar{
+    width: 100%;
+    height: 40px;
+    background-color: white;
+    border-bottom: 5px solid chocolate;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: chocolate;
+}
+
+.tabs{
+    display: flex;
+    flex-direction: row;
+}

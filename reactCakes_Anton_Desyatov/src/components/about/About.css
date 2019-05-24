@@ -1,0 +1,65 @@
+.about{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    background-color: navajowhite;
+    overflow: auto;
+}
+
+.aboutContainer{
+    background-color: white;
+    border: 3px solid chocolate;
+    border-radius: 5px;
+}
+
+.info1{
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    align-items: center;
+    width: 40%;
+    border: 3px solid chocolate;
+    border-radius: 5px;
+    margin: 5%;
+    padding: 10px;
+}
+
+.info2{
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+    width: 30%;
+    margin: 5%;
+    align-items: center;
+    padding: 10px;
+}
+
+.info3{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    align-items: center;
+    padding: 10px;
+    margin: 5%;
+}
+
+.shopName{
+    display: flex;
+    width: 100%;
+    align-self: center;
+    justify-content: center;
+    font-family: 'Lobster', cursive;
+    font-size: 100pt;
+}
+
+.aboutImageContainer{
+    margin: 10px;
+    height: 300px;
+    width: 80%;
+    border: 3px solid chocolate;
+    border-radius: 5px;
+    background-size: cover;
+    background-image: url("../../images/cake-shop-outside.jpg");
+}

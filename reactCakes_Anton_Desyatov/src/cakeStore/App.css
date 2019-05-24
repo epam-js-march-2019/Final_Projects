@@ -1,0 +1,33 @@
+.App {
+  text-align: center;
+}
+
+.content{
+    height: 450px;
+    width: 100%;
+    background-color: navajowhite;
+    overflow: auto;
+}
+
+.backgroundContainer{
+    height:100%;
+    width:100%;
+    background-image: url("../images/cakesBackground.png");
+    background-size: contain;
+}
+
+.mainWindow{
+    border: 5px solid chocolate;
+    color: chocolate;
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    height: 600px;
+    width: 1200px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+}

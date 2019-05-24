@@ -1,0 +1,51 @@
+.navigationTab:hover{
+    cursor: pointer;
+    background-color: grey;
+    transition: 0.5s;
+    color: white;
+}
+
+.passive{
+    color: black;
+}
+
+.tab{
+    padding: 10px;
+}
+
+.tab:hover{
+    cursor: pointer;
+    background-color: pink;
+    transition: 0.5s;
+}
+
+.authorizationTab{
+    border-right: 2px solid chocolate;
+}
+
+.catalogTab{
+    border-right: 2px solid chocolate;
+}
+
+.aboutTab{
+    padding: 10px;
+    border-right: 2px solid chocolate;
+}
+
+.signIn{
+    border-left: 2px solid chocolate;
+    border-right: 2px solid chocolate;
+}
+
+.logout{
+    border-left: 2px solid chocolate;
+}
+
+.link{
+    text-decoration: none;
+}
+
+.link:visited{
+    text-decoration: none;
+    color: inherit;
+}
