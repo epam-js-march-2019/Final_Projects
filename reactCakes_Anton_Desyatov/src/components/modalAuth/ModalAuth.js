@@ -124,11 +124,11 @@ class ModalAuth extends React.Component{
                 return (
                     <div className='backdrop'>
                         <div className='modal'>
+                            <p>Registrating new user</p>
                             <p className = 'errorMessage'>{this.state.errorMessage}</p>
                             <form id='authForm'
                                   className ='modalForm'
                                   onSubmit={this.passRegistration}>
-                                <p>Registrating new user</p>
                                 <label className='authLabel'> login:
                                     <input type='text'
                                            name='login'

@@ -17,7 +17,7 @@
     border: 4px solid chocolate;
     background-color: #fff;
     border-radius: 10px;
-    max-width: 500px;
+    width: 400px;
     min-height: 300px;
     margin: 0 auto;
     display: flex;
@@ -72,6 +72,8 @@ input{
 
 .authLabel{
     padding: 10px;
+    display: flex;
+    align-items: center;
 }
 
 .errorMessage{

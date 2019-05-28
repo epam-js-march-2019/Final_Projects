@@ -21,7 +21,7 @@ class ItemCard extends React.Component{
                                  src={this.props.des.image}
                                  alt=''/>
                         </div>
-                        <div className='button' onClick={()=>{this.props.order(this.props.des)}}>Order this cake</div>
+                        <div className='button' onClick={()=>{this.props.order(this.props.des)}}>Order this</div>
                     </div>
                 )
             } else{
@@ -55,7 +55,7 @@ class ItemCard extends React.Component{
                              src={this.props.imgPath}
                              alt=''/>
                     </div>
-                    <p className='authSuggestion'>Authorize to order this cake</p>
+                    <p className='authSuggestion'>Authorize to order this</p>
                 </div>
             )
         }

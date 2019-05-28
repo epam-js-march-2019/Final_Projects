@@ -7,7 +7,6 @@ import logo from '../../images/cupCakesLogo.png'
          return(
              <div className='header'>
                  <div className='logoContainer'>
-                     <img src={logo} alt='logo'/>
                  </div>
              </div>
          );
