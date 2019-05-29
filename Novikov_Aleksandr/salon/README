@@ -1,0 +1,6 @@
+1. To run the app, launch 'node index.js' from app root directory
+2. By default app will start at http://127.0.0.1:7002/
+3. app requires mongoDB daemon running locally and uses 'salon' database
+
+Alternatively, app is available online at
+https://epam-js-march-2019-fires3as0n.herokuapp.com/

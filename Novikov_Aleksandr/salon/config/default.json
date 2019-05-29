@@ -1,0 +1,5 @@
+{
+  "jwtPrivateKey": "",
+  "PORT": 7002,
+  "db": "mongodb://localhost/salon"
+}
