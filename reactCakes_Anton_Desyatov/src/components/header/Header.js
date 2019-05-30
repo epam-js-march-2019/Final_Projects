@@ -5,10 +5,10 @@ import logo from '../../images/cupCakesLogo.png'
 
      render(){
          return(
-             <div className='header'>
+             <header className='header'>
                  <div className='logoContainer'>
                  </div>
-             </div>
+             </header>
          );
      }
  }

@@ -1,5 +1,4 @@
 import React from 'react'
-import cakeShopImage from '../../images/cake-shop-outside.jpg'
 import './About.css'
 import {
     first_paragraph,
@@ -17,17 +16,19 @@ class About extends React.Component{
     }
 
     getTypes = () => {
+        let i =0;
         let types = [];
         this.types.map((type) => {
-            return types.push(<ul>{type}</ul>);
+            return types.push(<ul key={i++}>{type}</ul>);
         });
         return types;
     };
 
     getContacts = () => {
+        let i=0;
         let contacts = [];
         for(let prop in this.contacts){
-            contacts.push(<ul>{prop}: {this.contacts[prop]}</ul>);
+            contacts.push(<ul key = {i++}>{prop}: {this.contacts[prop]}</ul>);
         }
         return contacts
     };

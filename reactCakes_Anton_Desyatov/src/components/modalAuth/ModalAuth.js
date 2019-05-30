@@ -25,6 +25,7 @@ class ModalAuth extends React.Component{
 
     passAuth(e){
         e.preventDefault();
+        console.log(this.state.password);
         document.getElementById('authForm').reset();
         if(this.state.login === '') {
             this.setState({errorMessage: EMPTY_LOGIN});
@@ -33,6 +34,7 @@ class ModalAuth extends React.Component{
         }
         if(this.state.password === ''){
             this.setState({errorMessage: EMPTY_PASSWORD});
+            document.getElementById('authForm').reset();
             return;
         }
         console.log(this.state.showAuth);
@@ -84,7 +86,7 @@ class ModalAuth extends React.Component{
         if(this.props.showAuth){
             return(
                 <div className='backdrop'>
-                    <div className='modal'>
+                    <section className='modal'>
                         <p className='errorMessage'>
                             {this.state.errorMessage}
                         </p>
@@ -116,7 +118,7 @@ class ModalAuth extends React.Component{
                              name='authWindow'>
                             Cancel
                         </div>
-                    </div>
+                    </section>
                 </div>
             );
         }

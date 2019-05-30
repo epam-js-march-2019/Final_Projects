@@ -8,55 +8,55 @@ class ItemCard extends React.Component{
             console.log(window.location.href.toString());
             if(window.location.href.toString() === 'http://localhost:3000/Catalog'){
                 return (
-                    <div className='itemCard'>
-                        <div className='description'>
+                    <section className='itemCard'>
+                        <section className='description'>
                             <p>{this.props.des.name}</p>
                             <p>Price: {this.props.des.price} rubles</p>
                             <p>Calories: {this.props.des.calories}</p>
                             <p className='ingredients'>Ingredients: {this.props.des.ingredients.join(', ')}</p>
                             <p>Time to complete: {this.props.des.time}</p>
-                        </div>
+                        </section>
                         <div className='imageContainer'>
                             <img className='image'
                                  src={this.props.des.image}
                                  alt=''/>
                         </div>
                         <div className='button' onClick={()=>{this.props.order(this.props.des)}}>Order this</div>
-                    </div>
+                    </section>
                 )
             } else{
                 return(
-                    <div className='itemCard'>
-                        <div className='description'>
+                    <section className='itemCard'>
+                        <section className='description'>
                             <p>{this.props.des.name}</p>
                             <p>Price: {this.props.des.price} rubles</p>
                             <p>Calories: {this.props.des.calories}</p>
                             <p className='ingredients'>Ingredients: {this.props.des.ingredients.join(', ')}</p>
-                        </div>
+                        </section>
                         <div className='imageContainer'>
                             <img className='image' src={this.props.des.image} alt=''/>
                         </div>
                         <p className = 'timeStatus'>Will be ready on {this.props.des.date}</p>
-                    </div>
+                    </section>
                 )
             }
         } else{
             console.log(this.props);
             return(
-                <div className='itemCard'>
-                    <div className='description'>
+                <section className='itemCard'>
+                    <section className='description'>
                         <p>{this.props.des.name}</p>
                         <p>Price: {this.props.des.price} rubles</p>
                         <p>Calories: {this.props.des.calories}</p>
                         <p>Ingredients: {this.props.des.ingredients.join(', ')}</p>
-                    </div>
+                    </section>
                     <div className='imageContainer'>
                         <img className='image'
                              src={this.props.imgPath}
                              alt=''/>
                     </div>
                     <p className='authSuggestion'>Authorize to order this</p>
-                </div>
+                </section>
             )
         }
     }

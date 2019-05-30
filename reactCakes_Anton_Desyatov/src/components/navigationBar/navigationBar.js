@@ -55,8 +55,8 @@ class NavigationBar extends React.Component{
             )
         } else{
             return(
-                <div className='navigationBar'>
-                    <div className='tabs'>
+                <nav className='navigationBar'>
+                    <section className='tabs'>
                         <NavigationBarTab className='Authorization'
                                           name='Profile'
                                           manageActive={this.manageActive}
@@ -82,10 +82,10 @@ class NavigationBar extends React.Component{
                             link='/About'
 
                         />
-                    </div>
+                    </section>
                     <div className='logout tab'
                          onClick = {this.props.logout}>Logout</div>
-                </div>
+                </nav>
             )
         }
     }

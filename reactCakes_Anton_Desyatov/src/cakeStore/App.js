@@ -62,15 +62,25 @@ class App extends React.Component{
               showAuth: false
           });
           this.modalAuthRef.current.setState({errorMessage: ''});
+          alert('Successful registration!');
       }
   };
 
   auth = (login, password) => {
     if(!localStorage.getItem(login)){
-        this.modalAuthRef.current.setState({errorMessage: 'No user with that login'});
+        this.modalAuthRef.current.setState({
+            errorMessage: 'No user with that login',
+            login: '',
+            password: ''
+        });
+
     } else{
         if(!(JSON.parse(localStorage.getItem(login)).password === password)){
-            this.modalAuthRef.current.setState({errorMessage: 'Wrong password'});
+            this.modalAuthRef.current.setState({
+                errorMessage: 'Wrong password',
+                login: '',
+                password: '',
+            });
             console.log('Wrong password');
         } else{
             console.log('Successful login');
@@ -99,7 +109,12 @@ class App extends React.Component{
     };
 
   manageModalClose = (e) => {
-      this.modalAuthRef.current.setState({errorMessage: ''});
+      this.modalAuthRef.current.setState({
+          errorMessage: '',
+          login: '',
+          password: '',
+          passwordConfirm: ''
+      });
       this.setState({
           showAuth: false,
           showRegistration: false
