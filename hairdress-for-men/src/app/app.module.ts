@@ -10,6 +10,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { AlertComponent } from './alert/alert.component';
+import { LinkComponent } from './link/link.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AlertComponent } from './alert/alert.component';
     AboutUsComponent,
     HomeComponent,
     RegisterComponent,
-    AlertComponent
+    AlertComponent,
+    LinkComponent
   ],
   imports: [
     BrowserModule,

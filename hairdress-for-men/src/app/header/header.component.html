@@ -2,12 +2,12 @@
   <label>
     Welcome to {{ title }}!
   </label>
-  <nav>
-    <span>
-      <a [routerLink] = "['/about']">About</a>
-    </span>
-    <span>
-      <a [routerLink] = "['/login']">Login</a>
-    </span>
+  <nav class="header-nav" *ngIf="isLogged(); else noAuth">
+    <app-link *ngFor="let link of authLinks" [url]="link.url" [name]="link.name"></app-link>
   </nav>
+  <ng-template class="header-nav" #noAuth>
+    <app-link *ngFor="let link of noAuthLinks" [url]="link.url" [name]="link.name"></app-link>
+  </ng-template>
+
+  <button id="test" (click)="log()">log/unlog</button>
 </header>

@@ -3,12 +3,6 @@ header {
   background: grey;
 }
 
-nav {
-  display: inline-block;
-  padding: 10px;
-}
-
-nav span {
-  display: inline-block;
-  padding: 10px;
+.header-nav {
+  display: inline;
 }
