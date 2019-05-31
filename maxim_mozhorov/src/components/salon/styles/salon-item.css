@@ -1,0 +1,27 @@
+.home-block .home-block_info img{
+    width: 520px;
+    height: 270px;
+}
+
+.home-block_info_salon-item{
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    transition: .3s;
+}
+
+.home-block_info_salon-item:hover {
+    box-shadow: 0 3px 6px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    background-color: #ffd;
+}
+
+.home-block_info_salon-item img {
+    -moz-transition: all 1s ease-out;
+    -o-transition: all 1s ease-out;
+    -webkit-transition: all 1s ease-out;
+}
+
+.home-block_info_salon-item img:hover{
+    -webkit-transform: scale(1.02);
+    -moz-transform: scale(1.02);
+    -o-transform: scale(1.02);
+}
+
