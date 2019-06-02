@@ -1,0 +1,19 @@
+.card{
+    display: flex;
+    justify-content: center;
+    align-content: space-between;
+    padding: 20px 0 ;
+    font-family: Arial serif;
+    font-size: 17px;
+}
+.dateString{
+    padding:10px 0 0 0;
+    color:grey;
+    font-size: 15px;
+}
+.master{
+    font-weight: bold;
+}
+.time{
+    font-style: italic;
+}

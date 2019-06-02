@@ -1,0 +1,14 @@
+.container{
+    padding: 5px 0;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    border-bottom:1px solid grey;
+    padding:20px 20px;
+}
+.date{
+    font-size: 14px;
+
+}

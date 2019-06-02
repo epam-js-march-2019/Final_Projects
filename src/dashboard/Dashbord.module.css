@@ -1,0 +1,8 @@
+.dashboardContainer{
+    display: flex;
+    justify-content: center;
+
+}
+.itemContainer{
+    display: flex;
+}

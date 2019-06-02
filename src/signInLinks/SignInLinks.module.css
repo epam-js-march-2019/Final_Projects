@@ -1,0 +1,29 @@
+.signContainer{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.linkContainer{
+    display: flex;
+    list-style-type:none;
+    padding: 0 0 0 800px
+}
+.signLinkItem{
+    padding: 0 10px;
+    text-decoration: none;
+    color:white;
+}
+.linkItem:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+.signLinkAva{
+    padding: 10px 10px;
+    text-decoration: none;
+    color:white;
+    border-radius: 50%;
+    background: #D6A354;
+}
+.active{
+    color:#D6A354;
+}

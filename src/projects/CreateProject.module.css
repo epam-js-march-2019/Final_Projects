@@ -1,0 +1,45 @@
+.formContainer{
+    display: flex;
+    justify-content: center;
+}
+
+.form{
+    width: 500px;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.inputField{
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+}
+
+.labelField{
+    padding: 10px 0;
+    font-family: Georgia, serif;
+}
+.title{
+    font-family: Georgia, serif;
+    font-weight: lighter;
+}
+
+input:focus, select:focus{
+    outline: none;
+}
+input{
+    padding:3px 0;
+    font-family: Georgia, serif;
+    font-size: 14px;
+    border-radius: 10px;
+}
+.btnCreate{
+    padding: 5px 25px;
+    font-family: Georgia, serif;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: bold;
+}
+.btnCreate:hover{
+    background: #E8C375;
+}

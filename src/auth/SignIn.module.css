@@ -1,0 +1,49 @@
+.formContainer{
+    display: flex;
+    justify-content: center;
+    background: #ebebeb;
+}
+
+.form{
+    width: 200px;
+    text-align: center;
+    padding: 20px;
+}
+.label, .labelTitul{
+    padding:0 0 10px 0;
+}
+.title{
+    font-family: Georgia, serif;
+    font-weight: lighter;
+}
+.inputField{
+    display: flex;
+    flex-direction: column;
+    padding: 8px 0;
+}
+.btnCont{
+    padding:10px 0;
+
+}
+.btnCont:focus{
+    outline: none;
+}
+.redText{
+    color:red;
+}
+.loginBtn{
+    padding: 5px 25px;
+    font-family: Georgia, serif;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: bold;
+}
+.loginBtn:focus{
+    outline: none;
+}
+.loginBtn:hover{
+    background: #E8C375;
+}
+input:focus{
+    background: #E8C375;
+}

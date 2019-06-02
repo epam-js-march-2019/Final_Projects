@@ -1,0 +1,17 @@
+.signContainer{
+    display: flex;
+    list-style-type:none;
+    color:white;
+
+}
+ul{
+    padding:0;
+}
+.signLinkItem{
+    padding: 0 10px;
+    text-decoration: none;
+    color:white;
+}
+.linkItem:hover{
+    transform:scale(1.1);
+}

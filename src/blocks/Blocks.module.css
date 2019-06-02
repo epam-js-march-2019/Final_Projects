@@ -1,0 +1,21 @@
+.blocksContainer{
+    background: url("../assets/images/cutting.jpg") no-repeat center/cover;
+    color:white;
+
+}
+.collectionItems{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:100px 0;
+}
+.image{
+    width: 60px;
+    height: 60px;
+}
+.item{
+    display: flex;
+    flex-direction: column;
+    padding:0 40px;
+    align-items: center;
+}

@@ -1,0 +1,17 @@
+.headerContainer{
+    text-align: center;
+    color: #D6A354;
+    padding: 10px 0;
+}
+.text{
+    font-size: 18px;
+    text-shadow: 1px 1px 2px black, 0 0 1em white;
+}
+.logo{
+    width: 240px;
+    height: 200px;
+    border-radius:50%;
+}
+.logo:hover{
+    transform: scale(1.1);
+}

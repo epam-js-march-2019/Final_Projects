@@ -1,0 +1,11 @@
+.aboutContainer{
+
+}
+.textContainer{
+    padding: 10px 20px;
+}
+.text{
+    font-family: Georgia,serif;
+    font-weight: 400;
+    color:grey;
+}

@@ -1,0 +1,21 @@
+.contactsContainer{
+    padding: 20px 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.mapCont{
+    width: 100%;
+}
+
+.title{
+    font-size: 18px;
+    padding:0 0 10px 0;
+    font-family: "Arial Black";
+    font-style: italic;
+}
+.textContent{
+    display: flex;
+    flex-direction: column;
+    padding:0 20px;
+}
