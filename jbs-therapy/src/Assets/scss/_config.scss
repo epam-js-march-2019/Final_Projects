@@ -1,0 +1,48 @@
+$pink: #E28691;
+$white: #FEFCFC;
+$lightGrey: #696969;
+$darkGrey: #333;
+$red: #ff1755;
+$darkWhite: #F9F9E1;
+$lightPink: #FED3CD;
+
+@mixin translateY($e) {
+  -webkit-transform: translateY($e);
+  -moz-transform: translateY($e);
+  transform: translateY($e);
+}
+
+@mixin transition($e) {
+  -webkit-transition: $e;
+  -moz-transition: $e;
+  transition: $e;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body{
+  font-family: 'EB Garamond', sans-serif;
+  font-size: 18px;
+  color: $lightGrey;
+  font-weight: 400;
+  font-style: normal;
+  margin-bottom: 90px;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  @include transition(.4s ease-in-out);
+
+  &:hover{
+    color: $red;
+    @include transition(.4s ease-in-out);
+  }
+}
+
+.container-fluid {
+  line-height: 24px;
+}

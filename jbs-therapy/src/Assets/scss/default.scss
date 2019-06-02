@@ -1,0 +1,240 @@
+@import "_config.scss";
+
+header{
+  position: relative;
+  display: block;
+  width: 100%;
+  background: $pink;
+  color: $white;
+  height: 90px;
+
+  .logoImg {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    @include translateY(-50%);
+
+    img {
+      max-height: 80px;
+      max-width: 80px;
+    }
+  }
+}
+
+nav,
+nav ul,
+nav ul li {
+  margin: 0;
+  padding: 0;
+}
+
+nav{
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  @include translateY(-50%);
+    ul li {
+    list-style-type: none;
+    display: inline-block;
+    margin-right: 20px;
+      &.last {
+        margin:0;
+      }
+      a {
+        font-size: 19px;
+        line-height: normal;
+        color: $white;
+      }
+
+  }
+}
+
+.container-fluid {
+  text-align: center;
+  margin-top: 2%;
+  h1 {
+    font-size: 30px;
+    color: $lightGrey;
+    font-weight: 700;
+    margin-bottom: 2%;
+  }
+}
+
+table {
+  margin: auto;
+  width: 40%;
+}
+
+.price-table__caption {
+  text-align: center;
+  caption-side: top;
+  color: $darkGrey;
+  display: table-caption;
+  font-size: 30px;
+  margin-top: 20px;
+}
+
+.price-table__row {
+  border-bottom: 1px solid $darkGrey;
+  text-align: left;
+}
+
+.homePage-mainImg {
+  margin: 20px auto 0 auto;
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+blockquote {
+  margin: 0;
+  background: white;
+  border-top: 3px solid $pink;
+  border-bottom: 3px solid $pink;
+  color: #3A3C55;
+  padding: 30px 30px 30px 90px;
+  position: relative;
+  font-weight: 300;
+}
+blockquote:before {
+  content: "\201C";
+  font-family: serif;
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  color: white;
+  background: #FB6652;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 50px;
+  line-height: 1.35;
+  text-align: center;
+}
+blockquote p {
+  margin: 0 0 16px;
+  font-size: 22px;
+  letter-spacing: .05em;
+  line-height: 1.4;
+  font-family: 'EB Garamond', sans-serif;
+}
+blockquote cite {
+  font-style: normal;
+  font-family: 'EB Garamond', sans-serif;
+}
+
+.contact {
+    width: 100%;
+    color: $white;
+    height: 90px;
+    background-color: $pink;
+    position: absolute;
+    bottom: 0;
+
+  h3 {
+    font-size: 1.17em;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+}
+.contact--footer{
+  text-align: center;
+}
+
+.registration-form {
+  display: flex;
+  height: 100vh;
+  background-color:$darkWhite;
+}
+
+.registration-form--left-side{
+  background-color: $lightPink;
+  width: 50%;
+  position: relative;
+}
+
+.registration-form__pic {
+  max-width: 100%;
+  height: auto;
+  position: absolute;
+  bottom: 0;
+}
+
+.registration-form__box {
+  margin:auto auto auto 100px;
+  width: 50%;
+}
+
+.registration-form__label {
+  display: block;
+  color: $pink;
+  margin-bottom: 5px;
+}
+
+.registration-form__input {
+  width: 50%;
+  background-color: transparent;
+  border: none;
+  color: $lightGrey;
+  border-bottom: 1px solid $lightGrey;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.registration-form__button {
+  margin-top: 20px;
+  background-color: $pink;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 50px;
+  font-weight: 400;
+}
+
+.registration-form__link {
+  color: $lightGrey;
+  text-decoration: none;
+  display: inline-block;
+  margin-left: 15px;
+  padding-bottom: 5px;
+}
+
+.registration-button__background {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70px;
+}
+
+.registration-button__button {
+  background-color: $pink;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 50px;
+  font-weight: 400;
+}
+
+.profilepage-container {
+  height: 100vh;
+  background: url('../../components/pages/profilePic.jpg') no-repeat center;
+  background-size: 100%;
+}
+
+.service-select-form {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.service-select-form__select {
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+.service-select-form__data{
+  width: 100%;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
