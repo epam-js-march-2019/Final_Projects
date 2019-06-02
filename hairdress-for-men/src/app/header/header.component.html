@@ -2,12 +2,11 @@
   <label>
     Welcome to {{ title }}!
   </label>
-  <nav class="header-nav" *ngIf="isLogged(); else noAuth">
-    <app-link *ngFor="let link of authLinks" [url]="link.url" [name]="link.name"></app-link>
+  <nav class="header-nav" *ngIf="isLoggedIn(); else noAuth">
+    <app-link *ngFor="let link of authLinks" [link]="link"></app-link>
+    <button type="button" (click)="signOut()">Выйти</button>
   </nav>
   <ng-template class="header-nav" #noAuth>
-    <app-link *ngFor="let link of noAuthLinks" [url]="link.url" [name]="link.name"></app-link>
+    <app-link *ngFor="let link of noAuthLinks" [link]="link"></app-link>
   </ng-template>
-
-  <button id="test" (click)="log()">log/unlog</button>
 </header>

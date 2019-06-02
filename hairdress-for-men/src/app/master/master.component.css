@@ -1,0 +1,16 @@
+img {
+  width: 300px;
+  margin: 10px 40px;
+}
+
+.master {
+  padding: 10px;
+  height: 400px;
+  width: 400px;
+  display: inline-block;
+  background: gainsboro;
+}
+
+.master p {
+  text-align: center;
+}

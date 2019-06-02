@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import {Link} from "../domain/Link";
 
 @Component({
   selector: 'app-link',
@@ -6,8 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./link.component.css']
 })
 export class LinkComponent implements OnInit {
-  @Input() url: string;
-  @Input() name: string;
+  @Input() link: Link;
 
   constructor() { }
 

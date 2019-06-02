@@ -1,3 +1,7 @@
-<p>
-  login works!
-</p>
+<app-alert [alert]="error"></app-alert>
+<form name="loginForm" (ngSubmit)="login()" #loginForm="ngForm">
+  <label>Email: <input type="text" name="username" [(ngModel)]="username" required></label>
+  <label>Password: <input type="password" name="password" [(ngModel)]="password" required></label>
+  <button type="submit" [disabled]="loginForm.form.invalid">Войти</button>
+</form>
+<button type="button" (click)="redirectToRegisterPage()">Зарегистрироваться</button>

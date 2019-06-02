@@ -1,0 +1,7 @@
+<app-alert [alert]="error"></app-alert>
+<form name="loginForm" (ngSubmit)="register()" #loginForm="ngForm">
+  <label>Имя: <input type="text" name="username" [(ngModel)]="username" required></label>
+  <label>Пароль: <input type="password" name="password" [(ngModel)]="password" required></label>
+  <label>Повторите пароль: <input type="password" name="repeatedPassword" [(ngModel)]="repeatedPassword" required></label>
+  <button type="submit" [disabled]="loginForm.form.invalid">Зарегистрироваться</button>
+</form>

@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {AuthService} from "../app-services/auth.service";
+import {Router} from "@angular/router";
+import {Link} from "../domain/Link";
 
 @Component({
   selector: 'app-header',
@@ -7,21 +10,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   title: string = 'hairdress-for-men';
-  noAuthLinks: Array<Object> = [{url: '/admin', name: 'Admin'}];
-  authLinks: Array<Object> = [{url: '/login', name: 'Login'},
-                              {url: '/about', name: 'About'}];
-  auth: boolean = true;
+  authLinks: Array<Link> = [
+    {url: '/about', name: 'О нас'},
+    {url: '/contacts', name: 'Контакты'},
+    {url: '/services', name: 'Услуги'},
+    {url: '/my-orders', name: 'Мои заказы'}
+  ];
+  noAuthLinks: Array<Link> = [
+    {url: '/about', name: 'О нас'},
+    {url: '/contacts', name: 'Контакты'},
+    {url: '/services', name: 'Услуги'},
+    {url: '/login', name: 'Войти'}
+  ];
 
-  constructor() { }
+  constructor(private authService: AuthService,
+              private router: Router) {
+  }
 
   ngOnInit() {
   }
 
-  isLogged() {
-    return this.auth;
+  isLoggedIn() {
+    return this.authService.isLoggedIn();
   }
 
-  log() {
-    this.auth = !this.auth;
+  signOut() {
+    this.authService.logout();
+    this.router.navigate(['/login']);
   }
 }
