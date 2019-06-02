@@ -1,0 +1,735 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    margin: auto;
+    height: 80px;
+    width: 100%;
+    display: flex;
+    font-size: 1.4em;
+    justify-content: flex-end;
+    color: white;
+    background-color: #3B3A3D;
+    max-width: 100%;
+}
+
+.barbershops-name {
+    margin: auto;
+    font-size: 1.6em;
+    justify-content: flex-start;
+}
+
+.header__span-container {
+    margin: 20px;
+}
+
+.menu {
+    text-align: right;
+}
+  
+.menu__icon {
+    display: none;
+    width: 45px;
+    position: relative;
+    cursor: pointer;
+}
+  
+.menu__icon span {
+    display: block;
+    position: absolute;
+    height: 9px;
+    width: 100%;
+    background: white;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+}
+  
+.menu__icon span:nth-child(1) {
+    top: 0px;
+}
+  
+.menu__icon span:nth-child(2), .menu__icon span:nth-child(3) {
+    top: 13px;
+}
+  
+.menu__icon span:nth-child(4) {
+    top: 26px;
+}
+  
+.menu__links-item {
+    display: inline-block;
+    font-size: 0.9em;
+    line-height: 30px;
+    padding: 0 15px;
+}
+  
+.menu.menu_state_open .menu__icon span:nth-child(1) {
+    top: 18px;
+    width: 0%;
+    left: 50%;
+}
+  
+.menu.menu_state_open .menu__icon span:nth-child(2) {
+    transform: rotate(45deg);
+}
+  
+.menu.menu_state_open  .menu__icon span:nth-child(3) {
+    transform: rotate(-45deg);
+}
+  
+.menu.menu_state_open  .menu__icon span:nth-child(4) {
+    top: 18px;
+    width: 0%;
+    left: 50%;
+}
+  
+.menu.menu_state_open .header__span-container {
+    display: block;  
+}
+
+.carousel {
+    display: block;
+    height: 700px;
+    position: relative;
+    margin: auto;
+}
+
+.container-about-us {
+    margin: auto;
+    height: 300px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    color: white;
+    background-color: #6e6c78;
+}
+
+.container-about-us__left {
+    height: 300px;
+    display: flex;
+    width: 33%;
+    background-image: url(../images/we-left.jpg);
+    background-size: cover;
+}
+
+.container-about-us__right {
+    height: 300px;
+    display: flex;
+    width: 33%;
+    background-image: url(../images/we.jpg);
+    background-size: cover;
+}
+
+.container-about-us__text {
+    height: 300px;
+    display: flex;
+    width: 34%;
+    justify-content: center;  
+    font-size: 1.3em;  
+    max-width: 100%;
+    min-width: 34%;
+}
+
+.small-headers {
+    margin: auto;
+    text-align: center;
+    background-color: #6e6c78;
+    color:white;
+}
+
+.container-services {
+    margin: auto;
+    height: 350px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    color: white;
+    background-color: #6e6c78;
+}
+
+.container-services__table{
+    color: white;
+    background-color: #6e6c78;
+    height: 300px;
+    width: 30%;
+}
+
+.container-services__table-name, .container-services__table-price {
+    border-bottom: 1px solid white;
+}
+
+.container-services__table-headers {
+    font-size: 1.1em;
+    width: 100%;
+    caption-side: top;
+    color: white;
+    text-align: center;
+}
+
+.container-button__order {
+    height: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    color: white;
+    background-color: #6e6c78;
+}
+
+.container-for-shares {
+    margin: auto;
+    height: 300px;
+    display: flex;
+    width: 100%;
+    color: white;
+    background-color: #6e6c78;
+}
+
+.container__share-friend {
+    margin: auto;
+    height: 300px;
+    display: flex;
+    width: 20%;
+    background-image: url(../images/friend.png);
+    background-size: cover;
+    font-size: 0.8em;
+    color: white;
+    border-radius: 5px;
+}
+
+.container__share-first {
+    margin: auto;
+    height: 300px;
+    display: flex;
+    width: 20%;
+    background-image: url(../images/first.png);
+    background-size: cover;
+    font-size: 0.8em;
+    color: white;
+    background-color: #3B3A3D;
+    border-radius: 5px;
+}
+
+.container__share-birthday {
+    margin: auto;
+    height: 300px;
+    display: flex;
+    width: 20%;
+    background-image: url(../images/birthday.png);
+    background-size: cover;
+    font-size: 0.8em;
+    color: white;
+    background-color: #3B3A3D;
+    border-radius: 5px;
+}
+
+.container__share-fidelity {
+    margin: auto;
+    height: 300px;
+    display: flex;
+    width: 20%;
+    background-image: url(../images/fidelity.png);
+    background-size: cover;
+    font-size: 0.8em;
+    color: white;
+    background-color: #3B3A3D;
+    border-radius: 5px;
+}
+
+.button-order {
+    height: 40px;
+    width: 200px;
+    font-size: 1.3em;
+}
+
+.container-team {
+    margin: auto;
+    height: 400px;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    color: white;
+    background-color: #6e6c78;
+}
+
+.container-team__photo-Rostislav {
+    background-image: url(../images/Rostislav.png);
+    background-size: cover;
+    height: 350px;
+    width: 20%;
+}
+
+.container-team__photo-Victorya {
+    background-image: url(../images/Victorya.png);
+    background-size: cover;
+    height: 350px;
+    width: 20%;
+}
+
+.container-team__photo-Giuseppe {
+    background-image: url(../images/Giuseppe.png);
+    background-size: cover;
+    height: 350px;
+    width: 20%;
+}
+
+.container-name {
+    display: flex; 
+    flex-direction: row;
+    color: white;
+    background-color: #6e6c78;
+}
+
+.name {
+    margin: 2px auto;
+}
+
+.container-contacts {
+    color: white;
+    background-color: #3B3A3D;
+    margin: auto;
+    height: 110px;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.container-contacts__information {
+    height: 100px;
+    width: 35%;
+    text-align: center;
+}
+
+.container-social {
+    margin: auto;
+    color: white;
+    background-color: #3B3A3D;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.social-logo {
+    margin: 20px 10px;
+}
+
+a {
+    color:white;
+    text-decoration: none;
+}
+
+a:visited {
+    color: white;
+}
+
+a:hover {
+    color: #0056b3;
+    text-decoration: none;
+}
+
+.image-phone {
+    display: none !important; 
+}
+
+.image-tablet {
+    display: none !important; 
+}
+
+.desktop {
+    display: inline-block !important;
+}
+
+@media screen and (max-width: 480px) { /* разрешение смартфона */
+    .header {
+        height: 60px;
+        font-size: 0.6em;
+    }
+
+    .desktop {
+        display: none !important;
+    }
+    
+    .image-phone {
+        display: inline-block !important;
+    }
+
+    .image-tablet {
+        display: none !important; 
+    }
+
+    .carousel {
+        height: 100%;
+    }
+    
+    .barbershops-name {
+        font-size: 0.7em;
+    }
+
+    .menu__icon{
+        display: inline-block;
+    }
+      
+    .header__span-container {
+        position: fixed;
+        display: none;
+        top: 0;
+        right: 0;
+        margin: 60px 0;
+        background-color: #3B3A3D;
+        z-index: 1000;
+        overflow: auto;
+    }
+      
+    .menu__links-item {
+        margin: 5px;
+        display: block;
+        padding: 10px 0;
+        text-align: center;
+        color: #ffffff;
+    }
+
+    .small-headers {
+        font-size: 1.0em; 
+    }
+    
+    .container-about-us {
+        height: 150px;
+    }
+    
+    .container-about-us__left {
+        height: 150px;
+        width: 50%;
+    }
+    
+    .container-about-us__right {
+        height: 150px;
+        width: 50%;
+    }
+    
+    .container-about-us__text {
+        height: 300px;
+        width: 34%;
+        font-size: 0.95em;  
+    }
+
+    .container-about-us__text_information {
+        font-size: 0.7em;
+    }
+    
+    .small-headers {
+        font-size: 0.6em;
+    }
+    
+    .container-services {
+        height: 800px;
+        width: 100%;
+        font-size: 0.6em;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        flex-direction: row;    
+    }
+    
+    .container-services__table{
+        height: 200px;
+        width: 100%;
+    }
+    
+    .container-services__table-name, .container-services__table-price {
+        font-size: 0.8em;
+    }
+    
+    .container-services__table-headers {
+        padding: 50px 0 0 0;
+    }
+    
+    .container-button__order {
+        height: 60px;
+        width: 100%;
+    }
+    
+    .container-for-shares {
+        width: 100%;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        font-size: 0.7em;
+    }
+
+    .container__share-friend__headline {
+        font-size: 0.8em;
+    }
+    
+    .container__share-friend {
+        height: 150px;
+        width: 45%;
+        font-size: 0.6em;
+    }
+    
+    .container__share-first {
+        height: 150px;
+        width: 45%;
+        font-size: 0.6em;
+    }
+    
+    .container__share-birthday {
+        height: 150px;
+        width: 45%;
+        font-size: 0.6em;
+    }
+    
+    .container__share-fidelity {
+        height: 150px;
+        width: 45%;
+        font-size: 0.6em;
+    }
+
+    .container-button__order {
+        margin: 18px auto 0;
+    }
+    
+    .button-order {
+        height: 30px;
+        width: 100px;
+        font-size: 0.9em;
+    }
+    
+    .container-team {
+        margin: auto;
+        height: 150px;
+        width: 100%;
+    }
+    
+    .container-name {
+        font-size: 0.7em;
+    }
+    
+    .name {
+        margin: 2px auto;
+    }
+
+    .container-contacts {
+        height: 110px;
+        
+    }
+    
+    .container-contacts__information {
+        height: 100px;
+        max-width: 35%;
+        text-align: center;
+        font-size: 0.8em;
+    }
+    
+    .social-logo {
+        margin: 5px;
+    }
+}
+
+@media screen and (max-width: 1150px)  { /* разрешение планшета */
+    .header {
+        height: 60px;
+        font-size: 1.0em;
+    }
+    
+    .barbershops-name {
+        font-size: 1.0em;
+    }
+
+    .small-headers {
+        font-size: 1.0em; 
+    }
+
+    .registration-end {
+        padding: 200px 0;
+        height: 260px;
+        font-size: 1.2em;
+    }
+    
+    .menu__icon{
+        display: inline-block;
+    }
+      
+    .header__span-container {
+        position: fixed;
+        display: none;
+        top: 0;
+        right: 0;
+        margin: 60px 0;
+        background-color: #3B3A3D;
+        z-index: 1000;
+        overflow: auto;
+    }
+      
+    .menu__links-item {
+        margin: 5px;
+        display: block;
+        padding: 10px 0;
+        text-align: center;
+        color: #ffffff;
+    }
+
+    .desktop {
+        display: none !important;
+    }
+    
+    .image-phone {
+        display: none !important;
+    }
+
+    .carousel {
+        height: 50%;
+    }
+
+    .image-tablet {
+        display: inline-block !important; 
+    }
+    
+    .container-about-us {
+        height: 150px;
+    }
+    
+    .container-about-us__left {
+        height: 150px;
+        width: 50%;
+    }
+    
+    .container-about-us__right {
+        height: 150px;
+        width: 50%;
+    }
+    
+    .container-about-us__text {
+        height: 300px;
+        width: 34%;
+        font-size: 0.7em;  
+    }
+
+    .container-about-us__text_information {
+        font-size: 0.75em;
+    }
+    
+    .small-headers {
+        font-size: 1.1em;
+    }
+    
+    .container-services {
+        height: 800px;
+        width: 100%;
+        font-size: 0.9em;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        flex-direction: row;    
+    }
+    
+    .container-services__table{
+        height: 200px;
+        width: 100%;
+    }
+    
+    .container-services__table-name, .container-services__table-price {
+        font-size: 0.8em;
+    }
+    
+    .container-services__table-headers {
+        padding: 50px 0 0 0;
+    }
+    
+    .container-button__order {
+        height: 60px;
+        width: 100%;
+    }
+    
+    .container-for-shares {
+        width: 100%;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        font-size: 0.7em;
+    }
+
+    .container__share-friend__headline {
+        font-size: 1.0em;
+    }
+    
+    .container__share-friend {
+        height: 150px;
+        width: 45%;
+        font-size: 0.9em;
+    }
+    
+    .container__share-first {
+        height: 150px;
+        width: 45%;
+        font-size: 0.9em;
+    }
+    
+    .container__share-birthday {
+        height: 150px;
+        width: 45%;
+        font-size: 0.9em;
+    }
+    
+    .container__share-fidelity {
+        height: 150px;
+        width: 45%;
+        font-size: 0.8em;
+    }
+
+    .container-button__order {
+        margin: 18px auto 0;
+    }
+    
+    .button-order {
+        height: 30px;
+        width: 100px;
+        font-size: 0.9em;
+    }
+    
+    .container-team {
+        margin: auto;
+        height: 150px;
+        width: 100%;
+    }
+    
+    .container-team__photo-Rostislav {
+        height: 100%;
+        width: 30%;
+    }
+    
+    .container-team__photo-Victorya {
+        height: 100%;
+        width: 30%;
+    }
+    
+    .container-team__photo-Giuseppe {
+        height: 100%;
+        width: 30%;
+    }
+    
+    .container-name {
+        font-size: 0.7em;
+    }
+    
+    .name {
+        margin: 2px auto;
+    }
+
+    .container-contacts {
+        height: 110px;
+        font-size: 0.7em;
+    }
+    
+    .container-contacts__information {
+        height: 100px;
+        max-width: 35%;
+        text-align: center;
+    }
+    
+    .social-logo {
+        margin: 5px;
+    }
+}
