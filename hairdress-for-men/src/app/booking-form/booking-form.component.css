@@ -1,0 +1,36 @@
+.order-form {
+  margin: 50px 0 0 100px;
+  opacity: 0.8;
+  height: 240px;
+  width: 350px;
+  background-image: url("src/assets/paper.jpg");
+  background-size: 100%;
+  background-blend-mode: multiply;
+  padding: 20px;
+}
+
+.order-form p {
+  font-family: 'Courier New';
+  float: left;
+  padding-right: 10px;
+}
+
+.order-form form button {
+  float: right;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.order-form button {
+  margin-top: 10px;
+}
+
+.field {
+  clear: both;
+  text-align: right;
+  line-height: 25px;
+}
+
+.main {
+  float: left;
+}

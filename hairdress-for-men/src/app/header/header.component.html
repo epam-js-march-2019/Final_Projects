@@ -1,12 +1,18 @@
 <header>
-  <label>
-    Welcome to {{ title }}!
-  </label>
+  <div class="logo">
+    <p>
+      <a routerLink="">
+        <img src="assets/logo.png" alt="LOGO"/> {{title}}
+      </a>
+    </p>
+  </div>
   <nav class="header-nav" *ngIf="isLoggedIn(); else noAuth">
     <app-link *ngFor="let link of authLinks" [link]="link"></app-link>
-    <button type="button" (click)="signOut()">Выйти</button>
+    <button class="btn btn-sm btn-custom" type="button" (click)="signOut()">Выйти</button>
   </nav>
-  <ng-template class="header-nav" #noAuth>
-    <app-link *ngFor="let link of noAuthLinks" [link]="link"></app-link>
+  <ng-template #noAuth>
+    <nav class="header-nav">
+      <app-link *ngFor="let link of noAuthLinks" [link]="link"></app-link>
+    </nav>
   </ng-template>
 </header>

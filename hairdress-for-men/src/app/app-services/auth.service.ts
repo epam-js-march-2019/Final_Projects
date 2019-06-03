@@ -23,7 +23,6 @@ export class AuthService {
   }
 
   login(username: string, password: string): Alert {
-    console.log("try to log ");
     let userPassword = localStorage.getItem(username);
     if (password !== null && password === userPassword) {
       localStorage.setItem(currentUser, username);

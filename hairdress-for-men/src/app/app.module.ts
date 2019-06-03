@@ -17,7 +17,6 @@ import {ContactsComponent} from './contacts/contacts.component';
 import {BookingFormComponent} from './booking-form/booking-form.component';
 import {MyOrdersComponent} from './my-orders/my-orders.component';
 import {MasterComponent} from './master/master.component';
-import {OrderComponent} from './order/order.component';
 
 @NgModule({
   declarations: [
@@ -34,8 +33,7 @@ import {OrderComponent} from './order/order.component';
     ContactsComponent,
     BookingFormComponent,
     MyOrdersComponent,
-    MasterComponent,
-    OrderComponent
+    MasterComponent
   ],
   imports: [
     BrowserModule,

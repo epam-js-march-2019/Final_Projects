@@ -9,7 +9,7 @@ import {Link} from "../domain/Link";
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  title: string = 'hairdress-for-men';
+  title: string = 'Like at home';
   authLinks: Array<Link> = [
     {url: '/about', name: 'О нас'},
     {url: '/contacts', name: 'Контакты'},

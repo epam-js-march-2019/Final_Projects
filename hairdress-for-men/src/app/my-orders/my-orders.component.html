@@ -1,1 +1,22 @@
-<app-order *ngFor="let order of orders" [service]="order.service" [master]="order.master" [date]="order.date"></app-order>
+<h3 class="title">История заказов:</h3>
+<div *ngIf="orders.length > 0; else noOrders" class="my-orders">
+  <h4>Список заказов:</h4>
+  <table width="100%" bgcolor="#c0c0c0" cellspacing="0" cellpadding="5" border="1" align="right">
+    <tr>
+      <th>Предоставленная услуга</th>
+      <th>Мастер</th>
+      <th>Дата/время</th>
+    </tr>
+    <tr *ngFor="let order of orders">
+      <td>{{order.service}}</td>
+      <td>{{order.master}}</td>
+      <td>{{order.date | date: 'dd MMM yyyy HH:mm'}}</td>
+    </tr>
+  </table>
+</div>
+<ng-template #noOrders>
+  <div class="my-orders">
+    <p>К сожалению, заказов ещё не было.</p>
+  </div>
+</ng-template>
+

@@ -1,0 +1,12 @@
+.my-orders {
+  margin: 50px 0 0 100px;
+  opacity: 0.8;
+  max-height: 500px;
+  overflow-y: scroll;
+  width: 80%;
+  margin-left: 10%;
+  background-image: url("src/assets/paper.jpg");
+  background-size: 100%;
+  background-blend-mode: multiply;
+  padding: 20px;
+}

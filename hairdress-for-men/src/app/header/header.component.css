@@ -1,8 +1,37 @@
 header {
-  text-align:center;
+  width: 100%;
+  display: inline-block;
   background: grey;
+  opacity: 0.8;
+}
+
+.logo {
+  display: inline-block;
+  height: 40px;
+  width: auto;
+  vertical-align: center;
+}
+
+.logo img {
+  height: 30px;
+}
+
+.logo p {
+  margin: 5px 0 5px 100px;
+}
+
+.logo a {
+  font-family: "Helvetica Neue";
+  text-decoration: none;
+  color: white;
+}
+
+.logo a:hover {
+  color: rgb(244, 211, 149);
 }
 
 .header-nav {
+  float: right;
+  margin-right: 100px;
   display: inline;
 }

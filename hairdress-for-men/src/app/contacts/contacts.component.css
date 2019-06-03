@@ -1,0 +1,10 @@
+.text-block {
+  margin: 50px 0 0 100px;
+  opacity: 0.8;
+  height: 250px;
+  width: 350px;
+  background-image: url("src/assets/paper.jpg");
+  background-size: 100%;
+  background-blend-mode: multiply;
+  padding: 20px;
+}

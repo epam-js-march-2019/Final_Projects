@@ -1,0 +1,36 @@
+.login-form {
+  margin: 50px 0 0 100px;
+  opacity: 0.8;
+  height: 180px;
+  width: 300px;
+  background-image: url("src/assets/paper.jpg");
+  background-size: 100%;
+  background-blend-mode: multiply;
+  padding: 20px;
+}
+
+.login-form p {
+  font-family: 'Courier New';
+  float: left;
+  padding-right: 10px;
+}
+
+.login-form form button {
+  float: right;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.login-form button {
+  margin-top: 10px;
+}
+
+.field {
+  clear: both;
+  text-align: right;
+  line-height: 25px;
+}
+
+.main {
+  float: left;
+}

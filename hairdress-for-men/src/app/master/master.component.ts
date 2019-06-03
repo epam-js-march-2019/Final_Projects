@@ -13,5 +13,4 @@ export class MasterComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }

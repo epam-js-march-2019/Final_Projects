@@ -16,9 +16,12 @@ export class DataService {
 
   getMasters(): Array<Master> {
     return [
-      {name: "Антон", age: 36, description: "Ухаживал за бородой с 12 лет, имеет большой опыт в этом вопросе.", photoUrl: "assets/master-photos/master1.jpg"},
-      {name: "Митрофан", age: 22, description: "Спец по хипстерским стрижкам и укладкам.", photoUrl: "assets/master-photos/master2.jpg"},
-      {name: "Марк", age: 14, description: "Самый молодой спец, вертуозно орудует бритвой.", photoUrl: "assets/master-photos/master3.jpg"},
+      {name: "Антон", age: 36, description: "Ухаживал за бородой с 15 лет, имеет большой опыт в этом вопросе. В молодости с дедушкой стриг овец.",
+      photoUrl: "assets/master-photos/master1.jpg"},
+      {name: "Митрофан", age: 22, description: "Спец по хипстерским стрижкам и укладкам. Лучщий в стрижке под машинку.",
+      photoUrl: "assets/master-photos/master2.jpg"},
+      {name: "Марк", age: 17, description: "Самый молодой спец, вертуозно орудует бритвой. Имеет хороший вкус на модельные бороды. С нами больше 2 лет.",
+      photoUrl: "assets/master-photos/master3.jpg"},
     ];
   }
 

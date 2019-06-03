@@ -26,4 +26,3 @@ export class ServicesComponent implements OnInit {
     this.services = this.dataService.getServices();
   }
 }
-

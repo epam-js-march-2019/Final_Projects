@@ -15,5 +15,4 @@ export class AboutUsComponent implements OnInit {
   ngOnInit() {
     this.masters = this.dataService.getMasters();
   }
-
 }

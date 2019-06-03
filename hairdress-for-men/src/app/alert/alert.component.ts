@@ -1,10 +1,10 @@
 import {Component, Input, OnInit} from '@angular/core';
 
 export enum Alert {
-  BAD_CREDENTIALS = "Login or password is wrong.",
+  BAD_CREDENTIALS = "Неверный логин или пароль.",
   PASSWORDS_ARE_DIFFERENT = "Пароли не совпадают.",
   USER_HAS_ALREADY_EXIST = "Пользователь с таким именем уже существует.",
-  DATE_IS_BEFORE_THAN_NOW = "Дата записи должна быть не раньше следующего дня."
+  DATE_IS_BEFORE_THAN_NOW = "Дата записи должна быть не раньше текущей даты и времени."
 }
 
 @Component({
@@ -19,5 +19,4 @@ export class AlertComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }

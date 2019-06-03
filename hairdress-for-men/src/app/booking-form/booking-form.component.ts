@@ -12,8 +12,8 @@ import {Router} from "@angular/router";
   styleUrls: ['./booking-form.component.css']
 })
 export class BookingFormComponent implements OnInit {
-  services: Array<Service>;
-  masters: Array<Master>;
+  services: Array<Service> = [];
+  masters: Array<Master> = [];
   order: Order = new Order();
   error: Alert;
 

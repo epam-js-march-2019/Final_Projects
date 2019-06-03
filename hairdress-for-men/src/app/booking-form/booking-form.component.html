@@ -1,22 +1,26 @@
-<app-alert [alert]="error"></app-alert>
-<form *ngIf="masters !== undefined && services !== undefined" (ngSubmit)="makeOrder()" #orderForm="ngForm">
-  <label> Вид работы:
-    <select [(ngModel)]="order.service" name="service">
-      <option *ngFor="let service of services">{{service.description}}</option>
-      <option [ngValue]="undefined" hidden selected> Выберите услугу </option>
-    </select>
-  </label>
-  <label> Мастер:
-    <select [(ngModel)]="order.master" name="master">
-      <option *ngFor="let master of masters">{{master.name}}</option>
-      <option [ngValue]="undefined" hidden selected> Выберите мастера </option>
-    </select>
-  </label>
-  <label> Дата:
-    <input type="datetime-local" [(ngModel)]="order.date" name="date">
-  </label>
-  <!--<label> Время:-->
-    <!--<input type="time" [(ngModel)]="order.date" name="date">-->
-  <!--</label>-->
-  <button type="submit" [disabled]="isNotValid()">Записаться</button>
-</form>
+<div class="order-form">
+  <app-alert [alert]="error"></app-alert>
+  <form name="orderForm" (ngSubmit)="makeOrder()" #orderForm="ngForm">
+    <div class="main">
+      <div class="field">
+        <p>Вид работы:</p>
+        <select [(ngModel)]="order.service" name="service">
+          <option *ngFor="let service of services">{{service.description}}</option>
+          <option [ngValue]="undefined" hidden selected> Выберите услугу</option>
+        </select>
+      </div>
+      <div class="field">
+        <p>Мастер:</p>
+        <select [(ngModel)]="order.master" name="master">
+          <option *ngFor="let master of masters">{{master.name}}</option>
+          <option [ngValue]="undefined" hidden selected> Выберите мастера</option>
+        </select>
+      </div>
+      <div class="field">
+        <p>Дата:</p>
+        <input type="datetime-local" [(ngModel)]="order.date" name="date">
+      </div>
+    </div>
+    <button type="submit" class="btn btn-sm btn-custom" [disabled]="isNotValid()">Записаться</button>
+  </form>
+</div>

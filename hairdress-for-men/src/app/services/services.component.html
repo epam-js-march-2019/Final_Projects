@@ -1,4 +1,5 @@
-<div>
+<h3 class="title">Наши услуги:</h3>
+<div class="text-block">
   <app-service *ngFor="let service of services" [service]="service"></app-service>
+  <button type="button" class="btn btn-sm btn-custom" (click)="order()">Записаться</button>
 </div>
-<button type="button" (click)="order()">Записаться</button>

@@ -13,5 +13,4 @@ export class LinkComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }

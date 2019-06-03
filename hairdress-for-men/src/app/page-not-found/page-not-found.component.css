@@ -1,0 +1,16 @@
+.text-block {
+  opacity: 0.8;
+  height: 100px;
+  width: 300px;
+  background-image: url("src/assets/paper.jpg");
+  background-size: 100%;
+  background-blend-mode: multiply;
+  padding: 20px;
+  color: red;
+
+  position:absolute;
+  left:50%;
+  top:50%;
+  margin-left:-150px; /*Смещаем блок на половину всей ширины влево*/
+  margin-top:-50px; /*Смещаем блок на половину высоты вверх*/
+}
