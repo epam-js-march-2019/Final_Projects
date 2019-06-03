@@ -1,0 +1,9 @@
+.equipment__card {
+  text-align: center;
+  max-width: 220px;
+  margin: 0;
+}
+
+.equipment__image{
+  margin-bottom: 10px;
+}

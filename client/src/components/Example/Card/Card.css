@@ -1,0 +1,9 @@
+.example__card {
+  text-align: center;
+  max-width: 220px;
+  margin: 0;
+}
+
+.example__image{
+  margin-bottom: 10px;
+}

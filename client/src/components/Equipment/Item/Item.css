@@ -1,0 +1,35 @@
+.equipment__text {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+  justify-content: center;
+}
+
+.equipment__photo {
+  width: 100%;
+  max-width: 350px;
+  object-fit: contain;
+}
+
+.equipment__short {
+  flex: 1;
+  margin-left: 40px;
+}
+
+.equipment__name {
+  font-size: 24px;
+}
+
+.equipment__description {
+  line-height: 1.4;
+  margin-bottom: 30px;
+}
+
+.equipment__tabs {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.equipment__sublink {
+  margin: 20px 10px;
+}

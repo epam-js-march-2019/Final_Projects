@@ -1,0 +1,10 @@
+.tab-link {
+  background: none;
+  border: none;
+  color: #136EF5;
+  border-bottom: 2px dashed #136EF5;
+  font-size: 22px;
+  padding: 0;
+  padding-bottom: 3px;
+  cursor: pointer;
+}

@@ -1,0 +1,13 @@
+.specs-table {
+  width: 100%;
+  max-width: 800px;
+}
+
+.specs-table__row:nth-child(odd) {
+  background: #E4EFFF;
+}
+
+.specs-table__cell {
+  font-size: 16px;
+  padding: 5px;
+}

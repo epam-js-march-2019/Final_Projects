@@ -1,0 +1,18 @@
+.profile__order:nth-child(odd) {
+  background: #E4EFFF;
+}
+
+.profile__order td {
+  padding: 10px;
+}
+
+.profile__reject-button {
+  width: 30px;
+  height: 30px;
+  transform: rotate(45deg);
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 25px;
+  color: red;
+}

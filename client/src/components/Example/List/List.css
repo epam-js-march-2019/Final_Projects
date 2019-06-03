@@ -1,0 +1,13 @@
+.examples-list {
+  list-style: none;
+  margin: 20px 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.examples__item {
+  margin: 0 0 40px;
+}

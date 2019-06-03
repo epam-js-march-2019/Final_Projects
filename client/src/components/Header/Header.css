@@ -1,0 +1,40 @@
+.header {
+  display: flex;
+  justify-content: left;
+  max-width: 960px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.header__menu {
+  display: flex;
+  margin-left: auto;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.header__main-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.header__main-item {
+  display: inline-block;
+  margin: 10px 15px;
+}
+
+.header__main-link {
+  padding: 5px;
+}
+
+.active {
+  color: red;
+}
+

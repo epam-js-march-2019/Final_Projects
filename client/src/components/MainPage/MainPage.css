@@ -1,0 +1,33 @@
+.header {
+  grid-area: header;
+  max-width: 960px;
+  padding: 0 15px;
+  margin-bottom: 20px;
+}
+
+.main {
+  grid-area: main;
+  max-width: 960px;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer {
+  grid-area: footer;
+  width: 100%;
+}
+
+.main__header,
+.main__secondary-header {
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.main__header {
+  margin-top: 10px;
+}
+
+.main__secondary-header {
+  margin-top: 30px;
+  margin-bottom: 0;
+}

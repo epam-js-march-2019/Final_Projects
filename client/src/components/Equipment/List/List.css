@@ -1,0 +1,17 @@
+.equipment-list {
+  list-style: none;
+  margin: 20px 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.equipment__item {
+  margin: 0 0 40px;
+}
+
+.tab-link {
+  align-self: center;
+  margin-bottom: 30px;
+}
