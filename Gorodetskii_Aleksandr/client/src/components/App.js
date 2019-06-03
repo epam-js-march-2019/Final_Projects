@@ -7,11 +7,9 @@ import {
   Image,
   Text,
   SearchField,
-  Icon,
-	Spinner
+  Icon
 } from "gestalt";
 import { Link } from "react-router-dom";
-import logo from "./logo.svg";
 import "./App.css";
 import Strapi from "strapi-sdk-javascript/build/main";
 import Loader from './Loader';
@@ -90,11 +88,13 @@ class App extends Component {
 
         {/*Brand Section*/}
         <Box display="flex" justifyContent="center" marginBottom={2}>
+
           {/*Brands Header*/}
           <Heading color="midnight" size="md">
             Barbershop Brands
           </Heading>
         </Box>
+
         {/*Brands*/}
         <Box
           dangerouslySetInlineStyle={{

@@ -1,6 +1,15 @@
 import React from "react";
 import Strapi from "strapi-sdk-javascript/build/main";
-import { Box, Heading, Text, Image, Card, Button, Mask } from "gestalt";
+import {
+  Box,
+  Heading,
+  Text,
+  Image,
+  Card,
+  Button,
+  Mask,
+  IconButton
+} from "gestalt";
 import { Link } from "react-router-dom";
 
 const apiUrl = process.env.API_URL || "http://localhost:1337";
@@ -45,6 +54,24 @@ class Products extends React.Component {
     }
   }
 
+  addToCart = product => {
+    const alreadyIn = this.state.cartItems.findIndex(
+      item => item._id === product._id
+    );
+
+    if (alreadyIn === -1) {
+      const updatedItems = this.state.cartItems.concat({
+        ...product,
+        quantity: 1
+      });
+      this.setState({ cartItems: updatedItems });
+    } else {
+      const updatedItems = [...this.state.cartItems];
+      updatedItems[alreadyIn].quantity += 1;
+      this.setState({ cartItems: updatedItems });
+    }
+  };
+
   render() {
     const { brand, products, cartItems } = this.state;
 
@@ -54,12 +81,18 @@ class Products extends React.Component {
         display="flex"
         justifyContent="center"
         alignItems="start"
+        dangerouslySetInlineStyle={{
+          __style: {
+            flexWrap: "wrap-reverse"
+          }
+        }}
       >
         {/*Products Section*/}
         <Box display="flex" direction="column" alignItems="center">
           <Box margin={2}>
             <Heading color="orchid">{brand}</Heading>
           </Box>
+
           {/*Products*/}
           <Box
             dangerouslySetInlineStyle={{
@@ -101,7 +134,11 @@ class Products extends React.Component {
                     <Text color="orchid">{product.price}$</Text>
                     <Box marginTop={2}>
                       <Text bold size="xl">
-                        <Button color="blue" text="Add to shoping cart" />
+                        <Button
+                          color="blue"
+                          text="Add to shoping cart"
+                          onClick={() => this.addToCart(product)}
+                        />
                       </Text>
                     </Box>
                   </Box>
@@ -112,7 +149,7 @@ class Products extends React.Component {
         </Box>
 
         {/* Cart Area */}
-        <Box marginTop={2} marginLeft={7}>
+        <Box marginTop={2} alignSelf="end" marginLeft={7}>
           <Mask shape="rounded" wash>
             <Box
               display="flex"
@@ -129,21 +166,35 @@ class Products extends React.Component {
               </Text>
 
               {/* Cart Items */}
+              {cartItems.map(item => (
+                <Box key={item._id} display="flex" alignItems="center">
+                  <Text>
+                    {item.name} x {item.quantity} - $
+                    {(item.quantity * item.price).toFixed(2)}
+                  </Text>
+                  <IconButton
+                    accessibilityLabel="Delete"
+                    icon="cancel"
+                    size="sm"
+                    iconColor="red"
+                  />
+                </Box>
+              ))}
               <Box
                 display="flex"
                 alignItems="center"
                 justifyContent="center"
                 direction="column"
               >
-								<Box margin={2}>
-                {cartItems.length === 0 && (
-                  <Text color="red">Cart is empty</Text>
-								)}
-								</Box>
-								<Text size='lg'>Total:</Text>
-								<Text>
-									<Link to='/checkout'>Checkout</Link>
-								</Text>
+                <Box margin={2}>
+                  {cartItems.length === 0 && (
+                    <Text color="red">Cart is empty</Text>
+                  )}
+                </Box>
+                <Text size="lg">Total:</Text>
+                <Text>
+                  <Link to="/checkout">Checkout</Link>
+                </Text>
               </Box>
             </Box>
           </Mask>
