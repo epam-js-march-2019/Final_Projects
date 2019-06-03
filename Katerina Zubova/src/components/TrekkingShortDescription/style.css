@@ -1,0 +1,15 @@
+.trekking-short-description {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.trekking-short-description {
+    text-align: center;
+
+    font-size: 18px;
+    font-weight: normal
+}

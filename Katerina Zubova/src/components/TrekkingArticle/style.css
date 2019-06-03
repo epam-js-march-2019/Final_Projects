@@ -1,0 +1,60 @@
+.trekking-article {
+    width: 70%;
+    margin: 70px auto;
+
+    background-color: #ffffff !important;
+    box-shadow: 0 0 2px 0 rgba(51, 51, 51, 0.08), 0 0 2px 0 rgba(51, 51, 51, 0.08);
+
+    padding: 20px 0;
+}
+
+.trekking-article__title {
+    margin: 10px auto;
+    text-align: center;
+    width: 270px;
+    padding: 3px 0;
+    font-size: calc(24px + 0.5vw);
+    font-family: Poppins, sans-serif;
+    font-weight: normal;
+    color: #ffffff;
+    background-color: darkcyan;
+    border-radius: 3px;
+}
+
+.trekking-article__img { /*не нужно*/
+    width: 50%;
+    height: auto;
+}
+
+.trekking-article__paragraph {
+    width: 70%;
+    margin: 30px auto;
+    text-align: center;
+    font-size: calc(12px + 0.5vw);
+    line-height: calc(1em + 0.5vw);
+    color: darkslategrey;
+    border-top: 1px solid darkcyan;
+    padding-top: 10px;
+}
+
+.trekking-article__button {
+    margin: 10px auto;
+}
+
+
+.trekking-article__content {
+    margin: 30px;
+}
+
+.trekking-article__message {
+    margin: 20px auto;
+    text-align: center;
+    background: #ffffff;
+    border: 1px solid darkcyan;
+    border-radius: 2px;
+    height: 30px;
+    width: 70%;
+    color: darkcyan;
+    font-size: calc(10px + 0.5vw);
+}
+

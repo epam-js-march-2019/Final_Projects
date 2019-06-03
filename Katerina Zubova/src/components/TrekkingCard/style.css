@@ -1,0 +1,42 @@
+.trekking-card {
+    text-align: center;
+}
+
+.trekking-card__img {
+    width: 100%;
+    height: auto;
+}
+
+.trekking-card__title {
+    text-align: center;
+    margin: 10px auto;
+    width: 200px;
+    padding: 3px 0;
+    font-size: calc(14px + 0.5vw);
+    font-family: Poppins, sans-serif;
+    font-weight: normal;
+    color: white;
+    background-color: darkcyan;
+    border-radius: 3px;
+}
+
+.trekking-card__paragraph {
+    width: 90%;
+    font-size: calc(12px + 0.5vw);
+    line-height: calc(1em + 0.5vw);
+    margin-top: 15px;
+    color: darkslategrey;
+    border-top: 1px solid darkcyan;
+    padding-top: 10px;
+    display: inline-block;
+}
+
+.trekking-card__button {
+    margin: 5px auto 10px;
+}
+
+.trekking-card__button a {
+    color: inherit;
+    font-size: calc(10px + 0.5vw);
+    text-decoration: none;
+}

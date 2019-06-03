@@ -1,0 +1,19 @@
+
+.search-bar__title {
+    color: #ffffff;
+    font-family: Poppins, sans-serif;
+    font-weight: normal;
+    font-size: calc(16px + 0.5vw);
+}
+
+.search-bar__input {
+    margin-top: 10px;
+}
+
+.search-bar__list {
+    color: #ffffff;
+    list-style-type: none;
+
+    margin: 10px 0;
+    padding: 0;
+}

@@ -1,0 +1,54 @@
+.search-menu { /*перенести марджины*/
+    margin: -100px auto 0;
+    position: relative;
+    min-width: 80px;
+    width: 60%;
+    padding: 30px;
+    background-color: white;
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center 60%;
+}
+.search-menu__background {
+    height: 100%;
+
+    background-image: url(../../images/search-menu-background.jpg);
+    background-color: rgba(25, 25, 25, .4);
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center 60%;
+    background-attachment: fixed;
+    display: block;
+    border-radius: 5px;
+}
+
+.search-menu__list {
+    display: flex;
+    justify-content: space-evenly;
+
+    margin: 0;
+    padding: 0;
+}
+
+.search-menu__item {
+    list-style-type: none;
+    width: 40%;
+    margin-top: 30px;
+}
+
+.search-menu__button {
+    display: block;
+    background: rgba(25, 25, 25, 0.35);
+    border: 2px solid rgba(255, 255, 255, 0.35);
+    border-radius: 2px;
+    height:40px;
+    width: 20%;
+    margin: 70px auto 30px;
+    color: #ffffff;
+    font-family: Poppins, sans-serif;
+    font-size: calc(14px + 0.5vw);
+    font-weight: normal;
+}
+.search-menu__button:hover {
+    background: darkcyan;
+}
