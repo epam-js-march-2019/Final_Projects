@@ -1,0 +1,309 @@
+input.field {
+    width: 90%;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+td, th {
+    border: 1px solid #999;
+    padding: 0.5rem;
+    text-align: left;
+}
+
+/*Classes for creating dialogs*/
+
+.modalDialog {
+    position: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.8);
+    z-index: 99999;
+    opacity:0;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+}
+
+.modalDialog:target {
+    opacity:1;
+    pointer-events: auto;
+}
+
+.modalDialog > div {
+    width: 400px;
+    position: relative;
+    margin: 10% auto;
+    padding: 5px 20px 13px 20px;
+    border-radius: 10px;
+    background: #fff;
+    background: -moz-linear-gradient(#fff, #999);
+    background: -webkit-linear-gradient(#fff, #999);
+    background: -o-linear-gradient(#fff, #999);
+}
+
+.close {
+    background: #606061;
+    color: #FFFFFF;
+    line-height: 25px;
+    position: absolute;
+    right: -12px;
+    text-align: center;
+    top: -10px;
+    width: 24px;
+    text-decoration: none;
+    font-weight: bold;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+    -moz-box-shadow: 1px 1px 3px #000;
+    -webkit-box-shadow: 1px 1px 3px #000;
+    box-shadow: 1px 1px 3px #000;
+}
+
+.close:hover { background: #00d9ff; }
+
+/* for components */
+
+body {
+    box-sizing: border-box;
+    font-family: Verdana;
+}
+
+/* HEADER */
+header {
+    background-color: #424242;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+}
+
+header h1 {
+    text-align: left;
+    color: azure;
+    padding-left: 20px;
+}
+
+header div {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    padding-right: 20px;
+}
+
+header div a {
+    text-decoration: none;
+    color: azure;
+    font-size: 1.5em;
+
+}
+
+/* COMPANY LIST */
+.company-list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.company {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid grey;
+    background-color: #eee;
+    height: 350px;
+    width: 25%;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.company img {
+    border-radius: 50%;
+}
+
+/* ABOUT COMPANY  */
+
+.info label {
+    font-size: 1.1em;
+    font-weight: 800;
+}
+
+.about-company {
+    display: flex;
+    flex-flow: column wrap;
+    padding: 20px;
+}
+
+.company-info {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.company-info div {
+    margin: 10px;
+    padding: 10px;
+}
+
+.services .action-list {
+    display:flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.action-list li {
+    margin: 10px;
+}
+
+.company-info .info {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+}
+
+/* MAP */
+
+.map {
+    width: 100%;
+    height: 400px;
+}
+
+/* SELECT ACTION */
+
+.select-service {
+    width: 100%;
+    height: 50px;
+    background-color: #c79100;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.select {
+    width: 40%;
+    height: 40px;
+}
+/* EFFECTS */
+
+.company:hover {
+    border: 1px solid lightblue;
+    box-shadow: 10px 10px 5px rgba(0,0,0, 0.3);
+}
+
+.service:hover {
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
+}
+
+.service input:hover {
+    background-color: #c79100;
+}
+
+/* SERVICE LIST */
+
+.service-list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 20%;
+    border: 1px solid lightblue;
+    background-color: #eee;
+    margin: 1rem;
+    padding: 10px;
+    transition: all 0.3s linear;
+}
+
+.service h3 {
+    font-family: Verdana;
+    color: #424242;
+    text-transform: uppercase;
+}
+
+.service p {
+    font-size: 1em;
+    margin: 10px;
+}
+
+.service input {
+    background-color: #424242;
+    color: azure;
+    font-size: 1em;
+    text-transform: uppercase;
+    font-family: Verdana;
+    border: none;
+    padding: 5px;
+}
+
+/* NAVIGATION */
+
+.wrapper-navigation {
+    height: 40px;
+}
+
+.wrapper-navigation ul {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    margin: 2px 0;
+    background-color: #c79100;
+    height: inherit;
+}
+
+.navigation-item {
+    list-style: none;
+    text-align: center;
+    width: 30%;
+}
+
+.navigation-item a {
+    text-decoration: none;
+    color: azure;
+    font-size: 1.3em;
+    letter-spacing: 1px;
+    font-family: Verdana;
+}
+
+.profile {
+    display: flex;
+    flex-flow: row;
+    margin-top: 10px;
+}
+
+.profile div {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    padding-left: 20px;
+}
+
+.service-archive {
+    width: 100%;
+}
+
+.archive-list tr:first-child td{
+    border: 2px double lightblue;
+    font-weight: 600;
+    color: azure;
+    background-color: #424242;
+}
+
+.archive-list tr td {
+    border: 1px double grey;
+}
