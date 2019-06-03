@@ -18,6 +18,7 @@
       </div>
       <div class="field">
         <p>Дата:</p>
+        <!-- Date input doesn't work in Firefоx, https://github.com/angular/material/issues/2133 -->
         <input type="datetime-local" [(ngModel)]="order.date" name="date">
       </div>
     </div>
