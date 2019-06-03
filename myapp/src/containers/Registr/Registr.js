@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import Input from '../../Components/Input/Input.js';
-import './Registr.css';
 
 export default class Registr extends Component{
 
