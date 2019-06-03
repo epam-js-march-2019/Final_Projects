@@ -7,12 +7,14 @@ import {
   Image,
   Text,
   SearchField,
-  Icon
+  Icon,
+	Spinner
 } from "gestalt";
 import { Link } from "react-router-dom";
 import logo from "./logo.svg";
 import "./App.css";
 import Strapi from "strapi-sdk-javascript/build/main";
+import Loader from './Loader';
 
 const apiUrl = process.env.API_URL || "http://localhost:1337";
 const StrapiRq = new Strapi(apiUrl);
@@ -20,7 +22,8 @@ const StrapiRq = new Strapi(apiUrl);
 class App extends Component {
   state = {
     brands: [],
-    searchValue: ""
+		searchValue: "",
+		loadingSpinner: true
   };
 
   async componentDidMount() {
@@ -41,9 +44,10 @@ class App extends Component {
 					}`
         }
       });
-      this.setState({ brands: response.data.brands });
+      this.setState({ brands: response.data.brands, loadingSpinner: false });
     } catch (err) {
-      console.error(err);
+			console.error(err);
+			this.setState({ loadingSpinner: false})
     }
   }
 
@@ -61,7 +65,7 @@ class App extends Component {
   };
 
   render() {
-    const { searchValue } = this.state;
+    const { searchValue, loadingSpinner } = this.state;
 
     return (
       <Container>
@@ -109,7 +113,7 @@ class App extends Component {
                 image={
                   <Box height={200} width={200}>
                     <Image
-                      fit="cover"
+                      fit="contain"
                       alt="Brand Logo"
                       naturalHeight={1}
                       naturalWidth={1}
@@ -134,6 +138,7 @@ class App extends Component {
             </Box>
           ))}
         </Box>
+				<Loader show={loadingSpinner} />
       </Container>
     );
   }

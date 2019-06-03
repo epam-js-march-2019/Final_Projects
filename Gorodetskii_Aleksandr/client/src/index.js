@@ -9,6 +9,7 @@ import SignUp from "./components/SignUp";
 import Checkout from "./components/Checkout";
 import Navbar from "./components/Navbar";
 import registerServiceWorker from "./registerServiceWorker";
+import Products from './components/Products'
 
 //Stateless component
 const Root = () => (
@@ -20,6 +21,7 @@ const Root = () => (
         <Route component={SignIn} path="/signin" />
         <Route component={SignUp} path="/signup" />
         <Route component={Checkout} path="/checkout" />
+				<Route component={Products} path='/:productId' />
       </Switch>
     </React.Fragment>
   </Router>
