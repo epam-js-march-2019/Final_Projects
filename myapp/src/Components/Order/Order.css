@@ -1,0 +1,23 @@
+.order_Delete{
+	text-decoration: none;
+  outline: none;
+  display: inline-block;
+  width: 140px;
+  height: 45px;
+  line-height: 45px;
+  margin: 10px 20px;
+  font-size: 14px;
+  text-align: center;
+  letter-spacing: 3px;
+  font-weight: 600;
+  color: black;
+  background: #d6d6d6;
+  box-shadow: 0 8px 15px rgba(0,0,0,.1);
+  transition: .3s;
+}
+.order_Delete:hover{
+  background: #f1f0f0;
+  box-shadow: 0 15px 20px #d6d6d6;
+  color: black;
+  transform: translateY(-7px);
+}

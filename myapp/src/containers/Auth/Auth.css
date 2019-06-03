@@ -1,0 +1,23 @@
+
+.AuthForm
+{
+	width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+}
+.AuthForm__button{
+width: 70px;
+height: 20px;
+}
+.Auth_TopBar{
+	 display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+}
+.Auth_title{
+	    margin: 0px;
+}

@@ -1,0 +1,19 @@
+.Input{
+	margin-bottom: 15px;
+
+}
+.Input label{
+	margin-bottom: 3px;
+	padding: 0px;
+	display: block;
+	font-weight: bold;
+	
+}
+.Input input{
+	margin: 0 0 5px;
+	padding: 7px;
+	display: block;
+	font-weight: bold;
+	outline: none;
+	
+}

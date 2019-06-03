@@ -1,0 +1,20 @@
+.Auth{
+	display: flex;
+	text-align: center;
+	flex-direction: column;
+	width: 600px;
+	background: white;
+}
+.AuthForm
+{
+	background: pink;
+	width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+}
+.AuthForm__button{
+width: 70px;
+    margin-top: 15px ;
+}

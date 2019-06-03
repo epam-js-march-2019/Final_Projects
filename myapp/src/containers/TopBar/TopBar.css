@@ -1,0 +1,43 @@
+
+.TopBar{
+	height: 50px;
+	
+}
+.TopBar_header{
+	    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.TopBar_header_logo{
+	    width: 65px;
+	    height: 40px;
+	    padding: 5px 0px 0px 50px;
+}
+.TopBar_header_button{
+display: flex;
+    flex-direction: row;
+}
+.SignOut{
+	display: inline-block;
+    padding: 0 10px;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 50px;
+}
+.SignOut:hover{
+    background-color: rgba(0,0,0,.08);
+    color:red;
+}
+.YourProfile{
+	display: inline-block;
+    padding: 0 10px;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 50px;
+    color: #f60000
+}
+.YourProfile:hover{
+    background-color: rgba(0,0,0,.08);
+}

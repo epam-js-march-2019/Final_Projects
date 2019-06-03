@@ -1,0 +1,23 @@
+.ProfilePage {
+	padding-top: 20px;
+	display: flex;
+	text-align: center;
+	justify-content: space-around;
+}
+.ProfilePage li{
+	list-style-type: none; 
+}
+.ProfilePage_User ul{
+	padding-left: 0px;
+	    font-size: 16px;
+    text-align: left;
+}
+.ProfilePage_Order_table td{
+	text-align: left;
+	padding: 10px;
+
+}
+.ProfilePage_Order_table
+{
+	border: 1px solid  #b3b3b3;
+}
