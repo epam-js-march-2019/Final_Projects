@@ -1,0 +1,187 @@
+/*-------------------------Header-------------------------------------------*/
+
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab|PT+Sans+Caption&subset=latin,cyrillic);
+
+*{
+    font-family: 'dinpro-light', sans-serif;
+    color: black;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.body-site{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.logo-item{
+    margin: 5px;
+
+    height: 140px;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: whitesmoke;
+}
+
+.nav{
+    background-color: #22252b;
+    display: flex;
+    justify-content: center;
+}
+.nav-list{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    list-style: none;
+    width: 1000px;
+    height: 50px;
+    text-align: center;
+    margin: 0 10px 0 10px;
+}
+
+.list-item{
+    width: 100px;
+    margin: 5px;
+    font-size: 17px;
+    display: flex;
+    justify-content: space-around;
+    padding: 8px;
+    color: whitesmoke;
+
+}
+
+.sub-header{
+    height: 150px;
+    display: flex;
+    justify-content: center;
+}
+
+.sp-wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 1200px;
+}
+
+.sp-text{
+    height: 150px;
+    max-height: 150px;
+    max-width: 310px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.sp-phone{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.sp-private{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+
+.private-tabs{
+    margin: 10px;
+}
+
+/*-----------------------------Main content------------------------------*/
+main{
+    min-width: 450px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.main-section{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 80px;
+
+}
+
+.block-content{
+    width: 450px;
+    min-height: 250px;
+    border: 1px solid black;
+    margin: 15px;
+    text-align: center;
+}
+
+.client-info{
+    text-align: left;
+}
+
+.client-data {
+    margin: 10px 0 0 0;
+    padding-left: 10px;
+}
+.req-data{
+    margin: 10px 0 0 0;
+    padding-left: 10px;
+}
+
+
+/*------------------------------Footer--------------------------------------*/
+footer{
+    display: inline-block;
+    background: darkgray;
+}
+
+.foot{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: darkgray;
+    margin: 15px;
+}
+
+.social-media{
+    display: flex;
+    flex-direction: row;
+
+}
+.foot-media{
+    display: flex;
+    justify-content: center;
+}
+
+.profile{
+    height: 50px;
+    width: 50px;
+    margin: 10px;
+}
+
+.legal-address{
+    display: flex;
+    justify-content: center;
+    font-family: SansSerif;
+}
+
+.contact-number{
+    font-family: SansSerif;
+    display: flex;
+    justify-content: center;
+}
+
+.contacts{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+

@@ -1,0 +1,575 @@
+/*-------------------------Header-------------------------------------------*/
+
+@font-face {
+    font-family: dinpro-light;
+    src: url(fonts/ttf/dinpro-light.ttf) ;
+}
+
+@font-face {
+    font-family: dinpro-bold;
+    src: url(fonts/ttf/dinpro-bold.ttf);
+}
+
+@font-face {
+    font-family: dinpro-regular;
+    src: url(fonts/ttf/dinpro-regular.ttf);
+}
+
+@font-face {
+    font-family: dinpro-black;
+    src: url(fonts/ttf/dinpro-black.ttf);
+}
+
+*{
+    font-family: dinpro-light;
+    color: black;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    letter-spacing: 10;
+
+}
+.body-site{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.logo-item{
+    margin: 5px;
+
+    height: 140px;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: whitesmoke;
+}
+
+.nav{
+    background-color: #22252b;
+    display: flex;
+    justify-content: center;
+}
+.nav-list{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    list-style: none;
+    width: 1000px;
+    height: 50px;
+    text-align: center;
+    margin: 0 10px 0 10px;
+}
+
+.list-item{
+    width: 100px;
+    margin: 5px;
+    font-size: 17px;
+    display: flex;
+    justify-content: space-around;
+    padding: 8px;
+    color: whitesmoke;
+
+}
+
+.sub-header{
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.sp-wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 1200px;
+}
+
+.sp-text{
+    height: 150px;
+    max-height: 150px;
+    max-width: 310px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.sp-phone{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.phone{
+    font-size: 30px;
+    font-family: dinpro-bold;
+}
+
+.sp-private{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+
+.private-text{
+    margin: 5px 5px 5px 10px;
+    height: 100%;
+    width: 100%;
+    text-align: left;
+
+    font-family: 'dinpro-regular';
+
+}
+
+.active-title{
+    margin: 5px 5px 5px 10px;
+    height: 100%;
+    width: 100%;
+    text-align: left;
+
+    font-family: 'dinpro-regular';
+}
+
+.private-img{
+    width: 35px;
+    height: 35px;
+}
+
+.sign-tab{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    border: 1px solid black;
+    cursor: pointer;
+    text-decoration: none;
+    border: none;
+}
+
+.active-tab{
+    display: none;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.active-img{
+    width: 35px;
+    height: 35px;
+}
+
+
+.signUp-div{
+    display: none;
+    /*flex-direction: row;*/
+    /*align-items: center;*/
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8);
+    box-sizing: border-box;
+}
+
+.signIn-div{
+    display: none;
+    /*flex-direction: row;*/
+    /*align-items: center;*/
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8);
+}
+
+.signUpForm{
+    height: 500px;
+    width: 500px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.signInForm{
+    height: 500px;
+    width: 500px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.toggle-btnUp{
+    margin-bottom: 10px;
+    width: 450px;
+    height: 40px;
+    box-sizing: content-box;
+    display: inline-block;
+}
+
+.toggle-btnIn{
+    margin-bottom: 10px;
+    width: 450px;
+    height: 40px;
+    box-sizing: content-box;
+    display: inline-block;
+}
+
+.close-signUp{
+    width: 30px;
+    font-size: 25px;
+}
+
+.field-signUp{
+    min-width: 450px;
+    min-height: 350px;
+    margin-top: 10px;
+}
+
+.field-signIn{
+    min-width: 450px;
+    min-height: 150px;
+    margin-top: 10px;
+}
+
+.sub-signUp{
+    min-height: 35px;
+    margin-bottom: 10px;
+}
+
+.sub-signIn{
+    min-height: 35px;
+    margin-bottom: 10px;
+}
+
+
+.close{
+    color: #aaa;
+    float: right;
+}
+
+fieldset{
+    max-width: 350px;
+    border: 1px solid #7caee1;
+}
+span{
+    color: red;
+}
+
+table{
+    max-width: 350px;
+}
+
+tbody{
+    max-width: 350px;
+}
+
+form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+
+/*-----------------------------Main content------------------------------*/
+main{
+    min-width: 450px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+}
+
+.main-section{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.info-wrapper{
+    width: 100%;
+    border-bottom: 3px solid rgb(248,213,74);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.machine-title{
+    margin-top: 25px;
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+    font-family: dinpro-bold;
+    font-size: 30px;
+}
+
+.kom-link{
+    position: absolute;
+    display: block;
+    width: 450px;
+    height: 426px;
+    text-decoration: none;
+}
+
+.info-part{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: end;
+    height: 150px;
+    max-height: 100px;
+    min-height: 75px;
+    width: 1200px;
+
+}
+
+
+.request-link{
+    position: fixed;
+    right: 10px;
+    top: 30%;
+    background-color: rgb(14,18,113);
+    text-decoration: none;
+    border: 1px black solid;
+    border-radius: 5px;
+    padding: 5px 15px;
+    color: white;
+    width: 150px;
+    height: 35px;
+    text-align: center;
+    box-sizing: content-box;
+    font-family: 'dinpro-regular';
+
+}
+
+.content-block{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    vertical-align: bottom;
+    padding-left: 15px;
+}
+
+.info{
+    display: inline-grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    vertical-align: bottom;
+    position: relative;
+
+}
+
+.main-part{
+    font-size: 60px;
+    height: 100%;
+    margin: 0;
+    font-family: dinpro-bold;
+
+}
+
+.machine{
+    margin: 5px 5px 25px 5px;
+    display: inline-block;
+    width: 350px;
+    height: auto;
+    justify-content: center;
+    text-align: center;
+    font-size: 20px;
+
+}
+.item__text{
+    width: 100%;
+    flex-basis: 20%;
+}
+.item__image{
+    width: 100%;
+    flex-basis: 80%;
+}
+
+.machine-list{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1200px;
+
+}
+
+
+
+.request-wrapper{
+    margin: 30px;
+    display: flex;
+    max-height: 500px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.req-btn{
+    cursor: pointer;
+}
+
+.machine-card{
+    width: 500px;
+    height: 600px;
+    margin: 30px;
+    borderequest-contactsr: 1px solid black;
+    display: inline-block;
+
+}
+
+.request-contacts{
+    height: 400px;
+    width: 700px;
+    font-size: 25px;
+}
+
+input{
+    width: 250px;
+}
+
+.submit-wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.sub-mit{
+    font-size: 30px;
+}
+
+.req-warning{
+    color: red;
+    display: block;
+    text-align: center;
+}
+
+.message{
+    width: 350px;
+    height: 150px;
+}
+
+.table-logo{
+    width: 230px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-left: 15px;
+}
+
+.req-text{
+    font-family: dinpro-bold;
+}
+
+.contact{
+    text-align: center;
+}
+
+.darkline-wrapper{
+    width: 100%;
+}
+
+.darkline-info{
+    background: rgb(52, 58, 64);
+    color: rgb(204, 206, 207);
+    text-align: center;
+}
+
+.darkline-img{
+    width: 100px;
+    height: 100px;
+    float: left;
+    margin: 0 25px 0 0;
+}
+
+.parts-info{
+    display: inline-block;
+    vertical-align: top;
+    width: 500px;
+    padding: 25px 0 0 20px;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+.title-info{
+    color: rgb(255, 255, 255);
+    margin: 0 0 10px;
+    line-height: 1;
+    font-size: 25px;
+}
+
+.text-info{
+    margin-top: 0.5em;
+    margin-left: 125px;
+    margin-bottom: 20px;
+    opacity: 0.8;
+    font-size: 13px;
+    color: rgb(204, 206, 207)
+}
+
+/*------------------------------Footer--------------------------------------*/
+footer{
+    display: inline-block;
+    background: darkgray;
+}
+
+.foot{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: darkgray;
+    margin: 15px;
+}
+.social-media{
+    display: flex;
+    flex-direction: row;
+
+}
+.foot-media{
+    display: flex;
+    justify-content: center;
+}
+
+.profile{
+    height: 30px;
+    width: 30px;
+    margin: 10px;
+}
+
+.legal-address{
+    display: flex;
+    justify-content: center;
+    font-family: dinpro-light;
+}
+
+.contact-number{
+    font-family: dinpro-light;
+    display: flex;
+    justify-content: center;
+}
+
+.contacts{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+

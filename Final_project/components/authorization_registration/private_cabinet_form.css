@@ -1,0 +1,18 @@
+fieldset{
+    width: 250px;
+    height: 250px;
+    border: 1px solid #7caee1;
+}
+span{
+    color: red;
+}
+
+form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: inherit;
+    height: auto;
+    margin: 0;
+    padding: 0;
+}
