@@ -1,0 +1,53 @@
+{
+    "parser": "babel-eslint",
+    "extends": [
+      "plugin:react/recommended",
+      "eslint:recommended",
+      "plugin:jsx-a11y/recommended",
+      "airbnb"
+    ],
+    "plugins": [
+        "import",
+        "react",
+        "jsx-a11y",
+        "prettier"
+    ],
+    "env": {
+        "browser": true,
+        "jest": true,
+        "es6": true
+    },
+    "parserOptions": {
+        "ecmaVersion": 2017,
+        "sourceType": "module",
+        "jsx": true
+    },
+    "rules": {
+        "linebreak-style": "off",
+        "react/no-unescaped-entities": "off",
+        "quotes": ["error", "single", { "avoidEscape": true }],
+        "eol-last": ["error", "always"],
+        "no-loop-func": "error",
+        "no-unsafe-finally": "error",
+        "no-labels": "error",
+        "accessor-pairs": ["error", { "getWithoutSet": true }],
+        "no-constant-condition": "error",
+        "no-implicit-globals": "error",
+        "no-alert": "error",
+        "no-delete-var": "error",
+        "strict": ["error", "global"],
+        "no-with": "error",
+        "array-callback-return": ["error", { "allowImplicit": true }],
+        "no-empty-function": ["error", { "allow": ["arrowFunctions"] }],
+        "no-restricted-syntax": "error",
+        "no-duplicate-imports": "error",
+        "curly": ["error", "all"],
+        "arrow-parens": ["error", "as-needed"],
+        "max-len": ["error", { "code": 100, "tabWidth": 4, "ignoreStrings": true, "ignoreComments": true }],
+        "space-before-function-paren": ["error", { "anonymous": "never", "named": "never", "asyncArrow": "always" }],
+        "react/jsx-filename-extension": "off",
+        "react/jsx-indent": [2, 4, { "checkAttributes": true, "indentLogicalExpressions": true }],
+        "react/jsx-max-props-per-line": [2, { "max": 2 }],
+        "import/no-extraneous-dependencies": "off"
+    }
+}
