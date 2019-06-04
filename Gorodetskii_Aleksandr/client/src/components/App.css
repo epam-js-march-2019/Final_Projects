@@ -12,7 +12,10 @@ a:link,
 a:visited {
 	text-decoration: none;
 }
-
 .active {
-	font-style: italic;
+	color: orange;
+}
+.active > div,
+.active div >  h5 {
+	color: orange;
 }

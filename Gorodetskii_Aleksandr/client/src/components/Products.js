@@ -11,6 +11,7 @@ import {
   IconButton
 } from "gestalt";
 import { Link } from "react-router-dom";
+import { calculatePrice, setCart, getCart } from "../utility";
 
 const apiUrl = process.env.API_URL || "http://localhost:1337";
 const StrapiRq = new Strapi(apiUrl);
@@ -47,7 +48,8 @@ class Products extends React.Component {
       console.log(response);
       this.setState({
         products: response.data.brand.products,
-        brand: response.data.brand.name
+        brand: response.data.brand.name,
+        cartItems: getCart()
       });
     } catch (err) {
       console.error(err);
@@ -64,12 +66,19 @@ class Products extends React.Component {
         ...product,
         quantity: 1
       });
-      this.setState({ cartItems: updatedItems });
+      this.setState({ cartItems: updatedItems }, () => setCart(updatedItems));
     } else {
       const updatedItems = [...this.state.cartItems];
       updatedItems[alreadyIn].quantity += 1;
-      this.setState({ cartItems: updatedItems });
+      this.setState({ cartItems: updatedItems }, () => setCart(updatedItems));
     }
+  };
+
+  deleteFromCart = idItemToDel => {
+    const filteredItems = this.state.cartItems.filter(
+      item => item._id !== idItemToDel
+    );
+    this.setState({ cartItems: filteredItems }, () => setCart(filteredItems));
   };
 
   render() {
@@ -158,7 +167,7 @@ class Products extends React.Component {
               padding={3}
             >
               {/* Cart Heading */}
-              <Heading align="center" size="md">
+              <Heading align="center" size="sm">
                 Shoping Cart
               </Heading>
               <Text color="gray" italic>
@@ -177,6 +186,7 @@ class Products extends React.Component {
                     icon="cancel"
                     size="sm"
                     iconColor="red"
+                    onClick={() => this.deleteFromCart(item._id)}
                   />
                 </Box>
               ))}
@@ -191,7 +201,7 @@ class Products extends React.Component {
                     <Text color="red">Cart is empty</Text>
                   )}
                 </Box>
-                <Text size="lg">Total:</Text>
+                <Text size="lg">Total: {calculatePrice(cartItems)}</Text>
                 <Text>
                   <Link to="/checkout">Checkout</Link>
                 </Text>

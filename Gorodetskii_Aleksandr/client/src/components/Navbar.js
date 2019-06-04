@@ -31,8 +31,9 @@ const Navbar = () => {
               naturalWidth={1}
             />
           </Box>
-          <Heading size="xs" color="orange">
+          <Heading size="xs" color="lightGray">
             Barbershop
+						{/* "blue","darkGray","eggplant","gray","green","lightGray","maroon","midnight","navy","olive","orange","orchid","pine","purple","red","watermelon","white" */}
           </Heading>
         </Box>
       </NavLink>
