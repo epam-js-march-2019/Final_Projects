@@ -1,5 +1,5 @@
 /* TODO
-* 1. Add redirects from several routes depending on logged state
+* 1. Add redirects from several routes depending on logged state -DONE
  */
 
 import React from "react";
@@ -12,13 +12,17 @@ import Register from "./Register";
 import Login from "./Login";
 import Account from "./Account";
 import Records from "./Account/Records";
-import Dashboard from "./Account/Info";
+import Dashboard from "./Account/Dashboard";
 
 class Root extends React.Component {
 	render() {
 		return (
+			/*
+			* From version 4 react-router is a dynamic router that means
+			* that deep nested routes should be rendered inside peed component
+			* Here is an approach to make static routing with react router and it seems to work, but looks ugly
+			 */
 			<Router>
-
 				<Route path={"/"} component={Content}/>
 				<Switch>
 					<Route exact path={"/"} component={Main}/>
@@ -28,13 +32,6 @@ class Root extends React.Component {
 					<Route path={"/login"} component={Login}/>
 					<Route path={"/account"} component={Account}/>
 				</Switch>
-				<Route path={"/account/dashboard"} component={Dashboard}/>
-				<Route path={"/account/records"} component={Records}/>
-				<Route
-					path={"/account/old-records"}
-					render={() => <Records old={true}/>}
-				/>
-
 			</Router>
 		);
 	}

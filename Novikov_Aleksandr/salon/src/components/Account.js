@@ -9,7 +9,10 @@
 import React from "react";
 import {connect} from "react-redux";
 import {logout} from "../actions/authActions";
-import {Link} from "react-router-dom";
+import {Route, Link, Switch} from "react-router-dom";
+import Dashboard from "./Account/Dashboard";
+import Records from "./Account/Records";
+import './Account.css';
 
 class Account extends React.Component {
 	logout() {
@@ -24,11 +27,20 @@ class Account extends React.Component {
 			this.props.history.push('/login');
 
 		return (
-			<div id="account">
-				<Link to={"/account/dashboard"}>Dashboard</Link>
-				<Link to={"/account/records"}>Your records</Link>
-				<Link to={"/account/old-records"}>Your old records</Link>
-				<a onClick={this.logout.bind(this)}>Logout</a>
+			<div className="page-content">
+				<div id="account">
+					<Link to={`${this.props.match.url}/dashboard`}>Dashboard</Link>
+					<Link to={`${this.props.match.url}/records`}>Your records</Link>
+					<Link to={`${this.props.match.url}/old-records`}>Your old records</Link>
+					<a onClick={this.logout.bind(this)}>Logout</a>
+				</div>
+				<Route exact path={`${this.props.match.path}`} component={Dashboard}/>
+				<Route path={`${this.props.match.path}/dashboard`} component={Dashboard}/>
+				<Route path={`${this.props.match.path}/records`} component={Records}/>
+				<Route path={`${this.props.match.path}/old-records`}
+					component={() => <Records old={true}/>}
+				/>
+
 			</div>
 		);
 	}

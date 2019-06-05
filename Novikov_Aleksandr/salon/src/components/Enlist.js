@@ -1,10 +1,10 @@
- /*TODO
+/*TODO
 * 1. fetch() API looks too ugly, maybe use Axios instead? - DONE
 * 2. Current implementation fetches moment.js objects formatted to string
 * and then uses moment.js library on client to instantiate moment object.
 * What if we send non-formatted raw moment objects from the server?
 * It could make code much cleaner - should try.
- */
+*/
 
 import React from "react";
 import Service from './Service';
@@ -17,6 +17,8 @@ import _ from 'lodash';
 import {connect} from "react-redux";
 import axios from 'axios';
 import moment from 'moment';
+import {Link} from 'react-router-dom';
+import './Enlist.css';
 
 /*
 * this.data should consist of day objects fetched from server
@@ -153,20 +155,20 @@ class Enlist extends React.Component {
 				date: date
 			}
 		})
-		.then(response => {
-			// console.log(Object.getOwnPropertyDescriptors(response));
-			this.setState({
-				success: true,
-				msg: response.data
-			});
-		})
-		.catch(err => {
-			console.log(Object.getOwnPropertyDescriptors(err));
-			this.setState({
-				error: true,
-				msg: err.message + err.response.data,
+			.then(response => {
+				// console.log(Object.getOwnPropertyDescriptors(response));
+				this.setState({
+					success: true,
+					msg: response.data
+				});
 			})
-		});
+			.catch(err => {
+				console.log(Object.getOwnPropertyDescriptors(err));
+				this.setState({
+					error: true,
+					msg: err.message + err.response.data,
+				})
+			});
 
 		/* fetch sux ;D */
 		// fetch('/api/records', {
@@ -204,12 +206,21 @@ class Enlist extends React.Component {
 	render() {
 		if (this.props.logged == false || this.props.logged == null)
 			return (
-				<div>Unfortunately, enlisting is only available for registered users, please try to login or register first</div>
+				<div className="page-content">
+					<div className="unauthorized">
+						Unfortunately, enlisting is only available for registered users
+						<br/>
+						Please try to <Link to={"/login"}>login</Link> or <Link to={"/register"}>register</Link>
+					</div>
+				</div>
 			);
 
 		if (this.state.loading)
+
 			return (
-				<div>Loading...</div>
+				<div className="page-content">
+					<div className="unauthorized">Loading...</div>
+				</div>
 			);
 
 		const services = this.services.map(service => {
@@ -225,6 +236,7 @@ class Enlist extends React.Component {
 		});
 
 		return (
+			<div className="services-content">
 			<div id="enlist" className="container">
 
 				{/* SUMMARY */}
@@ -265,7 +277,15 @@ class Enlist extends React.Component {
 
 				{/* BUTTONS */}
 				{this.state.step != 0 &&
+				<button
+					className="btn btn-outline-secondary"
+					onClick={this.onReset.bind(this)}
+				>
+					Reset
+				</button>
+				}
 
+				{this.state.step != 0 &&
 				<button
 					className="btn btn-secondary"
 					onClick={this.onBack.bind(this)}
@@ -274,17 +294,8 @@ class Enlist extends React.Component {
 				</button>
 				}
 
-				{this.state.step != 0 &&
-				<button
-					className="btn btn-secondary"
-					onClick={this.onReset.bind(this)}
-				>
-					Reset
-				</button>
-				}
-
 				{this.state.step == 3 &&
-				 this.state.submitted == false &&
+				this.state.submitted == false &&
 
 				<button
 					className="btn btn-info"
@@ -294,6 +305,7 @@ class Enlist extends React.Component {
 				</button>
 				}
 
+			</div>
 			</div>
 		);
 	}

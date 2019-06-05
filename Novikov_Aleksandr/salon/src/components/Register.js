@@ -42,33 +42,33 @@ class Register extends React.Component {
 			},
 			body: JSON.stringify(data)
 		})
-		.then(response => {
-			if (response.status != 200) {
-				response.text()
-					.then(message => {
-						this.setState({
-							error: true,
-							msg: message
+			.then(response => {
+				if (response.status != 200) {
+					response.text()
+						.then(message => {
+							this.setState({
+								error: true,
+								msg: message
+							})
 						})
+				}
+				else {
+					response.json().then(user => {
+						this.props.login(user.name, user.token);
+						sessionStorage.setItem('salon-app-name', user.name);
+						sessionStorage.setItem('salon-app-token', user.token);
+						sessionStorage.setItem('salon-app-logged', true);
+						this.props.history.push('/account');
 					})
-			}
-			else {
-				response.json().then(user => {
-					this.props.login(user.name, user.token);
-					sessionStorage.setItem('salon-app-name', user.name);
-					sessionStorage.setItem('salon-app-token', user.token);
-					sessionStorage.setItem('salon-app-logged', true);
-					this.props.history.push('/account');
-				})
-			}
-		})
-		.catch(err => {
-			console.log("error while trying to register");
-			this.setState({
-				error: true,
-				errorMsg: err.statusText
+				}
 			})
-		})
+			.catch(err => {
+				console.log("error while trying to register");
+				this.setState({
+					error: true,
+					errorMsg: err.statusText
+				})
+			})
 	}
 
 	render() {
@@ -78,54 +78,56 @@ class Register extends React.Component {
 		const {error, success, msg} = this.state;
 
 		return (
-			<>
-				{error === true && <Error msg={msg}/>}
-				{success === true && <Success msg={msg}/>}
+			<div className="container page-content">
+				<div id="register-form">
+					{error === true && <Error msg={msg}/>}
+					{success === true && <Success msg={msg}/>}
 
-				<form>
-					<div className="form-group">
-						<label htmlFor="name">Name</label>
-						<input
-							type="text" className="form-control"
-							id="name" ref={this.nameField}
-						/>
-					</div>
+					<form>
+						<div className="form-group">
+							<label htmlFor="name">Name</label>
+							<input
+								type="text" className="form-control"
+								id="name" ref={this.nameField}
+							/>
+						</div>
 
-					<div className="form-group">
-						<label htmlFor="phone">Phone number</label>
-						<input
-							type="tel" className="form-control"
-							id="phone" ref={this.phoneField}
-						/>
-					</div>
+						<div className="form-group">
+							<label htmlFor="phone">Phone number</label>
+							<input
+								type="tel" className="form-control"
+								id="phone" ref={this.phoneField}
+							/>
+						</div>
 
-					<div className="form-group">
-						<label htmlFor="email">Email address</label>
-						<input
-							type="email" className="form-control"
-							id="email" ref={this.emailField}
-						/>
-						<small id="emailHelp" className="form-text text-muted">
-							We'll never share your email with anyone else.
-						</small>
-					</div>
+						<div className="form-group">
+							<label htmlFor="email">Email address</label>
+							<input
+								type="email" className="form-control"
+								id="email" ref={this.emailField}
+							/>
+							<small id="emailHelp" className="form-text text-muted">
+								We'll never share your email with anyone else.
+							</small>
+						</div>
 
-					<div className="form-group">
-						<label htmlFor="password">Password</label>
-						<input
-							type="password" className="form-control"
-							id="password" ref={this.passField}
-						/>
-					</div>
+						<div className="form-group">
+							<label htmlFor="password">Password</label>
+							<input
+								type="password" className="form-control"
+								id="password" ref={this.passField}
+							/>
+						</div>
 
-					<button
-						type="submit" className="btn btn-primary"
-						onClick={this.onRegisterSubmit.bind(this)}
-					>
-						Submit
-					</button>
-				</form>
-			</>
+						<button
+							type="submit" className="btn btn-primary"
+							onClick={this.onRegisterSubmit.bind(this)}
+						>
+							Submit
+						</button>
+					</form>
+				</div>
+			</div>
 		);
 	}
 }

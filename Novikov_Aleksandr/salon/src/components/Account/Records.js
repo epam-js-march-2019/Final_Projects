@@ -4,6 +4,7 @@ import Record from "./Record";
 import Error from "../Error";
 import {connect} from "react-redux";
 import {logout} from "../../actions/authActions";
+import './Records.css';
 
 class Records extends React.Component {
 
@@ -19,7 +20,7 @@ class Records extends React.Component {
 	}
 
 	componentDidMount() {
-		if(this.props.old == true)
+		if (this.props.old == true)
 			this.url += '?type=past';
 
 		axios({
@@ -30,19 +31,19 @@ class Records extends React.Component {
 				'x-auth-token': this.props.token
 			}
 		})
-		.then(response => {
-			this.setState({
-				loading: false,
-				records: response.data
-			});
-		})
-		.catch(err => {
-			this.setState({
-				error: true,
-				loading: false,
-				msg: err.message + err.response.data,
+			.then(response => {
+				this.setState({
+					loading: false,
+					records: response.data
+				});
 			})
-		});
+			.catch(err => {
+				this.setState({
+					error: true,
+					loading: false,
+					msg: err.message + err.response.data,
+				})
+			});
 		// console.log("asdfasdf", this.props);
 	}
 
@@ -50,20 +51,27 @@ class Records extends React.Component {
 		// console.log("asdfasdf", this.props);
 
 		if (this.state.loading)
-			return(<div> Loading...</div>);
+			return (
+				<div id="records">
+					Loading...
+				</div>
+			);
 
 		if (this.state.error)
-			return <Error msg={this.state.msg}/>;
+			return (
+				<div id="records">
+					<Error msg={this.state.msg}/>;
+				</div>
+			);
 
 		const records = this.state.records.map(record => (
 			<Record record={record} key={record._id}/>
 		));
 
 		return (
-		<div>
-
-			{records}
-		</div>
+			<div id="records">
+				{records}
+			</div>
 		);
 	}
 }

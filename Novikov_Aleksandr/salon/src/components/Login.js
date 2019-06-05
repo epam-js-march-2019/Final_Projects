@@ -76,34 +76,36 @@ class Login extends React.Component {
 
 
 		return (
-			<div id="login-form">
-				{error === true && <Error msg={msg}/>}
-				{success === true && <Success msg={msg}/>}
+			<div className="container page-content">
+				<div id="login-form">
+					{error === true && <Error msg={msg}/>}
+					{success === true && <Success msg={msg}/>}
 
-				<form>
-					<div className="form-group">
-						<label htmlFor="email">Email address</label>
-						<input
-							type="email" className="form-control"
-							id="email" ref={this.emailField}
-						/>
-					</div>
+					<form>
+						<div className="form-group">
+							<label htmlFor="email">Email address</label>
+							<input
+								type="email" className="form-control"
+								id="email" ref={this.emailField}
+							/>
+						</div>
 
-					<div className="form-group">
-						<label htmlFor="password">Password</label>
-						<input
-							type="password" className="form-control"
-							id="password" ref={this.passField}
-						/>
-					</div>
+						<div className="form-group">
+							<label htmlFor="password">Password</label>
+							<input
+								type="password" className="form-control"
+								id="password" ref={this.passField}
+							/>
+						</div>
 
-					<button
-						type="submit" className="btn btn-primary"
-						onClick={this.onLoginSubmit.bind(this)}
-					>
-						Login
-					</button>
-				</form>
+						<button
+							type="submit" className="btn btn-primary"
+							onClick={this.onLoginSubmit.bind(this)}
+						>
+							Login
+						</button>
+					</form>
+				</div>
 			</div>
 		);
 	}

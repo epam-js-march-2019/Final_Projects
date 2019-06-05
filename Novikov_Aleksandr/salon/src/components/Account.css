@@ -1,0 +1,25 @@
+#account {
+	background-color: #343A40;
+	text-align: center;
+	margin: 0 auto;
+	width: 100%;
+}
+
+#account a {
+	text-decoration: none;
+	margin: 10px;
+	display: inline-block;
+	color: blue;
+	cursor: pointer;
+	transition: all 0.4s;
+	color: rgba(255,255,255,.5);
+}
+
+#account a:hover {
+	color: crimson;
+}
+
+#account a:active {
+	color: red;
+}
+

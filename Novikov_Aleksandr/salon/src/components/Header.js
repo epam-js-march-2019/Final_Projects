@@ -27,7 +27,6 @@ class Header extends React.Component {
 							<Link
 								className="nav-link"
 								to={"/main"}
-								// activeStyle={{color: "red"}}
 							>
 								Main page
 							</Link>
@@ -37,9 +36,8 @@ class Header extends React.Component {
 							<Link
 								to={"/enlist"}
 								className="nav-link"
-								// activeClassName={"active"}
 							>
-								Enlist
+								Our services
 							</Link>
 						</li>
 					</ul>
@@ -53,7 +51,6 @@ class Header extends React.Component {
 							<Link
 								to={"/login"}
 								className="nav-link"
-								// activeClassName={"active"}
 							>
 								Login
 							</Link>
@@ -63,7 +60,6 @@ class Header extends React.Component {
 							<Link
 								to={"/register"}
 								className="nav-link"
-								// activeClassName={"active"}
 							>
 								Register
 							</Link>
