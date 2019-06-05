@@ -1,6 +1,10 @@
 import React from "react";
 import { Container, Box, Button, Text, Heading, TextField } from "gestalt";
 import Warning from "./Warning";
+import Strapi from "strapi-sdk-javascript/build/main";
+import { setToken } from "../utility";
+const apiUrl = process.env.API_URL || "http://localhost:1337";
+const StrapiRq = new Strapi(apiUrl);
 
 class SignUp extends React.Component {
   state = {
@@ -8,7 +12,8 @@ class SignUp extends React.Component {
     password: "",
     email: "",
     warning: false,
-    warningMessage: ""
+    warningMessage: "",
+    disableSubmit: false
   };
 
   changeHandler = ({ event, value }) => {
@@ -19,17 +24,31 @@ class SignUp extends React.Component {
     });
   };
 
-  submitHandler = event => {
+  submitHandler = async event => {
     const { username, password, email } = this.state;
     event.preventDefault();
 
     if (username && password && email) {
       // console.log('submitted')
+      try {
+        //loader(true)>request>loader(false)>token to local storage>redirect to homepage
+        this.setState({ disableSubmit: true });
+        const response = await StrapiRq.register(username, password, email);
+				this.setState({ disableSubmit: false });
+				setToken(response.jwt)
+        this.redirectUser("/");
+        console.log(response);
+      } catch (err) {
+        this.showWarningMessage(err.message);
+        this.setState({ disableSubmit: false });
+      }
     } else {
       this.showWarningMessage("You have to fill all fields");
       // console.log('form is empty');
     }
   };
+
+  redirectUser = path => this.props.history.push(path);
 
   showWarningMessage = message => {
     this.setState({ warning: true, warningMessage: message });
@@ -40,7 +59,7 @@ class SignUp extends React.Component {
   };
 
   render() {
-    const { warningMessage, warning } = this.state;
+    const { warningMessage, warning, disableSubmit } = this.state;
     return (
       <Container>
         <Box
@@ -104,7 +123,13 @@ class SignUp extends React.Component {
               onChange={this.changeHandler}
             />
 
-            <Button color="blue" text="submit" type="submit" inline />
+            <Button
+              disabled={disableSubmit}
+              color="blue"
+              text="submit"
+              type="submit"
+              inline
+            />
           </form>
         </Box>
         <Warning show={warning} message={warningMessage} />
