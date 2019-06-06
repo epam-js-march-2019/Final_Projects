@@ -5,6 +5,7 @@ import LandingPage from './LandingPage';
 import PriceList from './PriceList';
 import Profile from './Profile';
 import SignUpForm from './SignUp';
+import SignInForm from './SignIn';
 
 class Main extends Component {
   constructor () {
@@ -22,6 +23,7 @@ class Main extends Component {
     <Route path="/services" component={PriceList} />
     <Route path="/profile" component={Profile} />
     <Route path="/sign-up" component={SignUpForm} />
+    <Route path="/sign-in" component={SignInForm} />
   </Switch>
      )};
 }

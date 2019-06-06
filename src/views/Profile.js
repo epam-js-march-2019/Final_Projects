@@ -1,6 +1,32 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import BookAppointments from './BookAppointments';
-import SignInForm from './SignIn';
+import { Link as RouterLink } from 'react-router-dom';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import { withStyles } from '@material-ui/core/styles';
+import { Container, Typography, Link } from '@material-ui/core';
+
+const styles = theme => ({
+  '@global': {
+    body: {
+      backgroundColor: theme.palette.common.white,
+    },
+  },
+  paper: {
+    marginTop: theme.spacing(8),
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    height: '100vh',
+  },
+  notice: {
+    marginBottom: theme.spacing(1),
+    color: theme.palette.accent.pink,
+  },
+  link: {
+    color: theme.palette.accent.pink
+  }
+});
 
 class Profile extends Component {
 
@@ -21,19 +47,34 @@ class Profile extends Component {
       };
        
     render () {
+        const { classes } = this.props;
         const isLoggedIn = this.state.isLoggedIn;
         let content;
         if (isLoggedIn) {
             content = <BookAppointments />
             } else {
-            content = <SignInForm />
+            content = 
+            <Container component="main" maxWidth="xs">
+                <CssBaseline />
+                <div className={classes.paper}>
+                  <Typography className={classes.notice} component="h1" variant="h5">
+                    <Link component={RouterLink} to="/sign-in" className={classes.link}>Please sign in first.</Link>
+                  </Typography>
+                </div>
+            </Container>
+              
             }
         return (
             <>
-            {content}
+              {content}
             </>
         );
     };
   }
   
-  export default Profile;
+  Profile.propTypes = {
+    classes: PropTypes.object.isRequired,
+  };
+  
+  export default 
+    withStyles(styles) (Profile);

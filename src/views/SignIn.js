@@ -33,14 +33,18 @@ const styles = theme => ({
     '&:hover': {
       backgroundColor: theme.palette.accent.pink,
     },
-  },  
+  },
+  link: {
+    color: theme.palette.accent.pink
+  }
 });
 
 class SignInForm extends Component {
   state = {    
     user: '',
     password: '',
-    rememberMe: false
+    rememberMe: false,
+    isLoggedIn: false
   };
   
   handleChange = (event) => {
@@ -49,7 +53,8 @@ class SignInForm extends Component {
     this.setState({ [input.name]: value });
   };
  
-  handleFormSubmit = () => {
+  handleFormSubmit = (e) => {
+    e.preventDefault();
     const { user, password} = this.state;
     var userLS = localStorage.getItem('user');
     var passwordLS = localStorage.getItem('password');
@@ -57,15 +62,32 @@ class SignInForm extends Component {
         alert('Incorrect login or password. Please try again');
     } else {
         localStorage.setItem('isLoggedIn', true);
+        this.setState({ isLoggedIn: true });
     }
   };
   
   render () {
   const { classes } = this.props;
+  const isLoggedIn = this.state.isLoggedIn;
+  let notice;
+  if (isLoggedIn) {
+    notice =  <>
+      <Typography className={classes.notice} component="h1" variant="h5">
+        You have signed in.
+      </Typography>
+      <Typography className={classes.notice} component="h1" variant="h5">
+        <Link component={RouterLink} to="/profile" className={classes.link}>Go to Profile.</Link>
+      </Typography>
+    </>
+  } else {
+      notice =  <Typography className={classes.notice} component="h1" variant="h5">
+        </Typography>;
+  }
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
+        {notice}
         <Avatar className={classes.avatar}>
           <LockOutlinedIcon />
         </Avatar>

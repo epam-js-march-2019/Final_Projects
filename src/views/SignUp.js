@@ -22,7 +22,6 @@ const styles = theme => ({
   },
   notice: {
     marginBottom: theme.spacing(1),
-    color: theme.palette.accent.pink,
   },
   avatar: {
     marginTop: theme.spacing(5),
@@ -38,7 +37,10 @@ const styles = theme => ({
     '&:hover': {
       backgroundColor: theme.palette.accent.pink,
     },
-  },  
+  },
+  link: {
+    color: theme.palette.accent.pink
+  }
 });
 
 class SignUpForm extends Component {
@@ -77,7 +79,7 @@ class SignUpForm extends Component {
         You have been registered.
       </Typography>
       <Typography className={classes.notice} component="h1" variant="h5">
-        <Link component={RouterLink} to="/profile" className={classes.link}>Log in.</Link>
+        <Link component={RouterLink} to="/sign-in" className={classes.link}>Log in.</Link>
       </Typography>
     </>
   } else {
