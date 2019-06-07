@@ -236,20 +236,25 @@ class Enlist extends React.Component {
 		});
 
 		return (
-			<div className="services-content">
+			<div className="page-content">
 			<div id="enlist" className="container">
 
 				{/* SUMMARY */}
+				{this.state.step > 0 &&
+
 				<Summary
 					step={this.state.step}
 					service={this.state.service}
 					day={this.state.day}
 					time={this.state.time}
-				/>
-
+				>
 				{/* MESSAGES */}
 				{this.state.error && <Error msg={this.state.msg}/>}
 				{this.state.success && <Success msg={this.state.msg}/>}
+				</Summary>
+				}
+
+
 
 				{/* SERVICE */}
 				{this.state.step == 0 &&
@@ -276,9 +281,10 @@ class Enlist extends React.Component {
 				}
 
 				{/* BUTTONS */}
+				<div className="enlist-buttons">
 				{this.state.step != 0 &&
 				<button
-					className="btn btn-outline-secondary"
+					className="btn btn-secondary btn-lg"
 					onClick={this.onReset.bind(this)}
 				>
 					Reset
@@ -287,7 +293,7 @@ class Enlist extends React.Component {
 
 				{this.state.step != 0 &&
 				<button
-					className="btn btn-secondary"
+					className="btn btn-info btn-lg"
 					onClick={this.onBack.bind(this)}
 				>
 					Back
@@ -298,12 +304,13 @@ class Enlist extends React.Component {
 				this.state.submitted == false &&
 
 				<button
-					className="btn btn-info"
+					className="btn btn-success btn-lg"
 					onClick={this.onSubmit.bind(this)}
 				>
 					Submit
 				</button>
 				}
+				</div>
 
 			</div>
 			</div>

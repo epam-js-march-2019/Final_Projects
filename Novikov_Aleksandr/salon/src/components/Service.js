@@ -1,4 +1,5 @@
 import React from "react";
+import "./Service.css";
 
 function Service(props) {
 	const style = {

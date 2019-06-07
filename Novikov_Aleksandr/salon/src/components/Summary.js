@@ -1,6 +1,6 @@
 import React from "react";
 import moment from 'moment';
-// function moment() {return moment().zone(-3)}
+import './Summary.css';
 
 function Summary(props) {
 	const stepMessages = ["", "Select day", "Select time", "Confirm"];
@@ -25,6 +25,7 @@ function Summary(props) {
 
 				<p>Date: {day}</p>
 			}
+			{props.children}
 		</div>
 	);
 }

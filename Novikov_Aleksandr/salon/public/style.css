@@ -1,3 +1,73 @@
+/* 0-0 very strange behavior, does not work */
+/*html {*/
+  /*background: url("/img/background.png") no-repeat center center fixed;*/
+  /*-webkit-background-size: cover;*/
+  /*-moz-background-size: cover;*/
+  /*-o-background-size: cover;*/
+  /*background-size: cover;*/
+/*}*/
+
+
+/* Code should be
+<img src="/img/background.png" class="bg1-0">
+in this case */
+/* Works but looks ugly*/
+/*img.bg1-0 {
+  !* Set rules to fill background *!
+  min-height: 100%;
+  min-width: 1024px;
+
+  !* Set up proportionate scaling *!
+  width: 100%;
+  height: auto;
+
+  !* Set up positioning *!
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -100;
+}
+@media screen and (max-width: 1024px) { !* Specific to this particular image *!
+  img.bg1-0 {
+    left: 50%;
+    margin-left: -512px;   !* 50% *!
+  }
+}*/
+
+/* white line at bottom*/
+/*#bg2-0 {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  !* Preserve aspet ratio *!
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -100;
+
+}*/
+
+/* looks like a perfect solution */
+#bg2-1 {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  z-index: -100; /* will not work without this, but there is nothing about it in the guide*/
+}
+#bg2-1 img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  min-width: 50%;
+  min-height: 50%;
+}
+
+
 nav img {
 	width: 100px;
 }
@@ -23,118 +93,14 @@ nav img {
 	padding: 15px;
 }
 
-/* Service component */
-.service {
-	cursor: pointer;
-	min-height: 100px;
-	background-size: cover;
-	display: grid;
-	grid-template-columns: repeat(4, 25%);
-	grid-template-rows: repeat(3, 1fr);
-	grid-template-areas: "service service service ." ". . . ." ". . . price";
-	/*grid-column-gap: 5px;*/
-	/*grid-row-gap: 10px;*/
-	justify-items: center;
-	align-items: center;
-	transition: all .4s;
-	/*outline: 1.4px solid white;*/
-	max-width: 700px;
-	margin: 0 auto 15px;
-}
 
-.service:hover {
-	/*outline: 1.4px solid #790f6a;*/
-	/*	box-shadow:
-		1px 0px 2px 1px #790f6a,
-		0px 1px 2px 1px #790f6a,
-		-1px 0px 2px 1px #790f6a,
-		0px -1px 2px 1px #790f6a;*/
-	box-shadow: 0 0 2px 2px #790f6a;
-}
-
-.service-name {
-	grid-area: service;
-	font-size: 3em;
-	color: #790f6a;
-	/*background-color: rgba(225, 53, 222, 0.1);*/
-	/*text-shadow: 0 0 6px #ffffff;*/
-	text-shadow: 1px 0px 2px #ffffff,
-	0px 1px 2px #ffffff,
-	-1px 0px 2px #ffffff,
-	0px -1px 2px #ffffff;
-	/*justify-self: stretch;*/
-	align-self: stretch;
-}
-
-.service-price {
-	grid-area: price;
-	font-size: 2.5em;
-	color: #000;
-	background-color: rgba(225, 225, 225, 0.5);
-	justify-self: end;
-	/*align-self: end;*/
-	text-align: right;
-	padding: 10px;
-	border-radius: 50%;
-	margin: 10px;
-}
-
-/* End Service component */
 
 /* Time component */
 .time {
 	cursor: pointer;
 }
 
-/* Summary component*/
-#summary {
-	font-size: 1.2em;
-	border-bottom: 1px solid #790f6a;
-	margin: 0 0 15px;
-	padding: 10px;
-	color: #790F6A;
-}
 
-#summary p:first-child {
-	font-weight: 600;
-}
-
-/* End Summary Component */
-
-/* Days & Times components*/
-#dates {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: flex-start;
-}
-
-.date {
-	cursor: pointer;
-	width: 80px;
-	height: 80px;
-	transition: all .4s;
-	border: 1px solid #790f6a;
-	font-weight: 600;
-	margin: 10px;
-}
-
-.date:hover {
-	box-shadow: 0 0 2px 2px #790f6a;
-}
-
-.date p {
-	margin: 0;
-	padding: 0;
-	text-align: center;
-}
-
-.time {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-/* End Days&Times Components */
 
 
 
@@ -220,13 +186,17 @@ nav img {
 	}
 }
 
+html {
+
+}
+
 .page-content {
-	height: 100vh;
-	width: 100vw;
-	position: fixed;
-	background-image: url("/img/background.png");
-	background-repeat: no-repeat;
-	background-size: cover;
+	/*height: 100vh;*/
+	/*width: 100vw;*/
+	/*position: fixed;*/
+	/*background-image: url("/img/background.png");*/
+	/*background-repeat: no-repeat;*/
+	/*background-size: cover;*/
 }
 
 .services-content {
@@ -247,6 +217,7 @@ nav img {
 	font-size: 1.1em;
 	text-align: center;
 }
+
 
 
 

@@ -1,5 +1,6 @@
 import React from "react";
 import moment from 'moment';
+import './Days.css';
 // function moment() {return moment().zone(-3)}
 
 function Days(props) {
