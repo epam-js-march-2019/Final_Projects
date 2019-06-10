@@ -1,4 +1,5 @@
 import React from 'react';
+import LoginForm from './LoginForm'
 import { Menu, Popup, List, Button, Image } from 'semantic-ui-react';
 
 const CartComponent = ({ title, id, image, removeFromCart }) => (
@@ -20,6 +21,9 @@ const MenuComponent = ({ totalPrice, count, items }) => (
     <Menu.Item name="browse" onClick={this.handleItemClick}>
       Магазин книг
     </Menu.Item>
+		<LoginForm>
+      Login
+    </LoginForm>
 
     <Menu.Menu position="right">
       <Menu.Item name="signup" onClick={this.handleItemClick}>

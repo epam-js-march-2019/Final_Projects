@@ -6,6 +6,7 @@ import Filter from '../containers/Filter';
 import Menu from '../containers/Menu';
 import { Card } from 'semantic-ui-react';
 
+
 class App extends Component {
   componentWillMount() {
     const { setBooks } = this.props;
@@ -20,6 +21,7 @@ class App extends Component {
       <Container>
         <Menu />
         <Filter />
+
         <Card.Group itemsPerRow={4}>
           {!isReady
             ? 'Загрузка...'
