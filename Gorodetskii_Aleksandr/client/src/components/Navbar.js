@@ -20,14 +20,19 @@ class Navbar extends React.Component {
   }
 }
 
-const AuthenticatedNavBar = ({logoutHandler}) => {
+const AuthenticatedNavBar = ({ logoutHandler }) => {
   return (
     <Box
+      dangerouslySetInlineStyle={{
+        __style: {
+          backgroundColor: "#41b3a3"
+        }
+      }}
       display="flex"
       alignItems="center"
       justifyContent="around"
       height={70}
-      color="midnight"
+      // color="midnight"
       padding={1}
       shape="roundedBottom"
     >
@@ -56,7 +61,13 @@ const AuthenticatedNavBar = ({logoutHandler}) => {
       </NavLink>
 
       {/* Logout button*/}
-      <Button onClick={logoutHandler} color="transparent" text="LogOut" inline size="md" />
+      <Button
+        onClick={logoutHandler}
+        color="transparent"
+        text="LogOut"
+        inline
+        size="md"
+      />
     </Box>
   );
 };
@@ -68,7 +79,11 @@ const UnauthenticatedNavBar = () => {
       alignItems="center"
       justifyContent="around"
       height={70}
-      color="midnight"
+			dangerouslySetInlineStyle={{
+        __style: {
+          backgroundColor: "#41b3a3"
+        }
+      }}
       padding={1}
       shape="roundedBottom"
     >

@@ -16,8 +16,6 @@ class SignIn extends React.Component {
   };
 
   changeHandler = ({ event, value }) => {
-    //native evt or sythetic evt???
-    event.persist();
     this.setState({
       [event.target.name]: value
     });

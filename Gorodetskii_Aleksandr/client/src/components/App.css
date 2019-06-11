@@ -1,6 +1,7 @@
 html, body {
 	margin: 0;
-	background-color: #f6fbfb;
+	background-color: #fbeec1;
+	
 }
 
 * {
@@ -13,9 +14,9 @@ a:visited {
 	text-decoration: none;
 }
 .active {
-	color: orange;
+	color: #f64c72;
 }
 .active > div,
 .active div >  h5 {
-	color: orange;
+	color: #f64c72;
 }

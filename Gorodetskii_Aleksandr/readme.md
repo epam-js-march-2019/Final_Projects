@@ -1,5 +1,9 @@
 # Final Project
 
+First, you have to install `strapi` globally:
+
+		npm install strapi@beta -g
+
 To install dependencies, execute in `/client` folder:
 
 

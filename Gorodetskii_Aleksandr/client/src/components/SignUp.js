@@ -17,8 +17,6 @@ class SignUp extends React.Component {
   };
 
   changeHandler = ({ event, value }) => {
-    //native evt or sythetic evt???
-    event.persist();
     this.setState({
       [event.target.name]: value
     });
@@ -65,7 +63,7 @@ class SignUp extends React.Component {
         <Box
           dangerouslySetInlineStyle={{
             __style: {
-              backgroundColor: "#ebe2db"
+              backgroundColor: "lightgray"
             }
           }}
           margin={4}
