@@ -1,4 +1,4 @@
-package me.geeksploit.enot;
+package me.geeksploit.enot.configuration;
 
 import me.geeksploit.enot.employee.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,10 +10,10 @@ import org.springframework.hateoas.EntityLinks;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Component;
 
-import static me.geeksploit.enot.WebSocketConfiguration.MESSAGE_PREFIX;
+import static me.geeksploit.enot.configuration.WebSocketConfiguration.MESSAGE_PREFIX;
 
 @Component
-@RepositoryEventHandler(Employee.class)
+@RepositoryEventHandler()
 public class EventHandler {
 
     private final SimpMessagingTemplate websocket;

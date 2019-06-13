@@ -93,3 +93,4 @@ chrome-user-data
 *.db
 bundle.js*
 package-lock.json
+secret.js

@@ -10,7 +10,7 @@ export default class Company extends React.Component {
                 <h3>{this.props.name}</h3>
                 <p>{this.props.address}</p>
                 <p>{this.props.phone}</p>
-                <button className="add-service">Add service</button>
+                <button className="add-service" onClick={this.props.onClick}>Add service</button>
             </section>
         )
     }

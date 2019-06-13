@@ -1,4 +1,5 @@
 import React from 'react'
+
 export default class SelectAction extends React.Component{
     constructor(props) {
         super(props);
@@ -6,14 +7,12 @@ export default class SelectAction extends React.Component{
 
     render(){
         const options = this.props.services.map((item, index) => {
-            return <option key={index} value={item}>{item.title}</option>
+            return <option key={index} value={index}>{item.title}</option>
         });
-
-        console.log(this.props.services);
-
         return(
             <section className="select-service">
-                <select className="select">
+                <select className="select" onChange={this.props.onChange}>
+                    <option>Выберите услугу</option>
                     {options}
                 </select>
             </section>

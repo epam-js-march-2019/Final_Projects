@@ -5,8 +5,14 @@ import Profile from "../profile/Profile";
 import ServiceList from "../service/ServiceList";
 import ArchiveService from "../service/ArchiveService";
 
+import client from '../../client'
+import follow from '../../follow'
+
+const root = '/api';
 
 export default class DashboardContentPage extends React.Component {
+
+
     render(){
         return(
             <div>

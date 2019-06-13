@@ -1,5 +1,6 @@
-package me.geeksploit.enot;
+package me.geeksploit.enot.configuration;
 
+import me.geeksploit.enot.SpringDataJpaUserDetailsService;
 import me.geeksploit.enot.manager.Manager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
@@ -13,6 +14,10 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
+
+    private static final String[] ANT_PATTERNS_API = {"/api", "/api/**/*"}; // TODO: make sure to tighten API access in production
+    private static final String[] ANT_PATTERNS_FILE = {"/bower_components/**", "/built/bundle.js*", "/*.jsx", "/main.css"};
+    private static final String[] ANT_PATTERNS_PATH = {"/"};
 
     @Autowired
     private SpringDataJpaUserDetailsService userDetailsService;
@@ -28,13 +33,13 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers("/bower_components/**", "/built/bundle.js*",
-                        "/*.jsx", "/main.css", "/", "/api", "/api/services", "/api/services/*", "/dashboard").permitAll()
+                .antMatchers(ANT_PATTERNS_API).permitAll()
+                .antMatchers(ANT_PATTERNS_FILE).permitAll()
+                .antMatchers(ANT_PATTERNS_PATH).permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
-                // TODO: define separate url for login (such as /login) instead of just root (/)
-                .defaultSuccessUrl("/", true)
+                .defaultSuccessUrl("/dashboard", true)
                 .permitAll()
                 .and()
                 .httpBasic()
