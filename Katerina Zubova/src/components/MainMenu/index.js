@@ -5,11 +5,14 @@ import {Link} from "react-router-dom";
 import "./style.css"
 
 function MainMenu () {
+    const data =[{header: "Главная", link: "/"},
+        {header: "Личный кабинет" , link: "/profile"},
+        {header: "Регистрация", link: "/SignIn"}
+    ];
+    const list = data.map(item=><li className={"main-menu__item"} key={item.header}><Link to={item.link}>{item.header}</Link></li>);
     return (
         <ul className={"main-menu"}>
-            <li className={"main-menu__item"}><Link to="/">Главная</Link></li>
-            <li className={"main-menu__item"}><Link to="/profile">Личный кабинет</Link></li>
-            <li className={"main-menu__item"}><Link to="/SignIn">Регистрация</Link></li>
+            {list}
         </ul>
     )
 }

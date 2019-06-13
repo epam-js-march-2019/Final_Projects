@@ -77,7 +77,7 @@ class SignIn extends React.Component {
         e.preventDefault();
         const { password, passwordRepeat } = this.state;
 
-        if(password.length<5 || password!=passwordRepeat) {
+        if(password.length<5 || password!==passwordRepeat) {
             this.setState({message: "Проверьте правильность ввода паролей следуя подсказкам"});
             return
         }
@@ -112,7 +112,7 @@ class SignIn extends React.Component {
         const value=e.target.value;
         const {password}=this.state;
 
-        if (value!=password)
+        if (value!==password)
             this.setState({message: "Пароли не совпадают"});
         else
             this.setState({message: ""});

@@ -10,9 +10,8 @@ class TrekkingArticle extends Component {
 
     constructor (props) {
         super(props);
-
-        const {pathname}=this.props.location;
-        const id=pathname.replace("/trekking/", ""); /*????????*/
+        console.log(this.props);
+        const {id}=this.props.match.params;
         this.trekking = trekkingAPI.get(id);
     }
 
@@ -45,7 +44,7 @@ class TrekkingArticle extends Component {
                 <h3>{item.day}</h3>
                 <p>{item.plan}</p>
             </React.Fragment>
-         )})
+         )});
 
         return (
              <div className={"trekking-article block"}>

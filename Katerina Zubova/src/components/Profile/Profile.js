@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {Link, Redirect} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 import {trekkingAPI} from '../../trekkingApi'
 
@@ -12,7 +12,7 @@ class Profile extends Component {
         const {user}= this.props;
 
         const findTrekking = (id) => {
-            return trekkingAPI.all().filter(item=>item.id==id)[0];
+            return trekkingAPI.all().filter(item=>item.id===id)[0];
         }
 
         const trekking = user.trekking.map((id) => {return <li key={id}><Link to={`/trekking/${id}`}>{findTrekking(id).title}</Link></li>});

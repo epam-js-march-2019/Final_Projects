@@ -7,7 +7,7 @@
     justify-content: space-evenly;
 }
 
-.trekking-short-description {
+.trekking-short-description__item {
     text-align: center;
 
     font-size: 18px;

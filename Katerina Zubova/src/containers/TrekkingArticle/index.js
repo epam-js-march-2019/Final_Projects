@@ -7,7 +7,7 @@ import TrekkingArticle from "../../components/TrekkingArticle/index.js";
 const mapStateToProps = (state) => {
     return {
         user: state.session.user,
-        isAuth: Boolean(state.session.user)
+        isAuth: Boolean(state.session.user) /*селекторы*/
     };
 };
 

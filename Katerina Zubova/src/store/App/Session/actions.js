@@ -5,7 +5,7 @@ import store from "../../../store"
 function checkCredentials (email, password) {
     const user = JSON.parse(localStorage.getItem(email));
     if (user)
-        return (user.email==email && user.password==password);
+        return (user.email===email && user.password===password);
     return false
 }
 
