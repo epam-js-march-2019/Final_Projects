@@ -1,18 +1,34 @@
 import React from 'react'
-import '../../main.css'
+import UpdateDialog from './UpdateDialog'
 
 export default class Employee extends React.Component {
 
-    render() {
+    constructor(props) {
+        super(props);
+        this.handleDelete = this.handleDelete.bind(this);
+    }
 
+    handleDelete() {
+        this.props.onDelete(this.props.employee);
+    }
+
+    render() {
         return (
-            <section className="company">
-                <img src="https://randomuser.me/api/portraits/men/33.jpg"/>
-                <h3>{this.props.firstName}</h3>
-                <p>{this.props.lastName}</p>
-                <p>{this.props.description}</p>
-                <button className="show-more">Подробнее</button>
-            </section>
+            <tr>
+                <td>{this.props.employee.entity.firstName}</td>
+                <td>{this.props.employee.entity.lastName}</td>
+                <td>{this.props.employee.entity.description}</td>
+                <td>{this.props.employee.entity.manager.name}</td>
+                <td>
+                    <UpdateDialog employee={this.props.employee}
+                                  attributes={this.props.attributes}
+                                  onUpdate={this.props.onUpdate}
+                                  loggedInManager={this.props.loggedInManager}/>
+                </td>
+                <td>
+                    <button onClick={this.handleDelete}>Delete</button>
+                </td>
+            </tr>
         )
     }
 }

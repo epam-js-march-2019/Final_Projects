@@ -16,7 +16,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     private static final String[] ANT_PATTERNS_API = {"/api", "/api/**/*"}; // TODO: make sure to tighten API access in production
-    private static final String[] ANT_PATTERNS_FILE = {"/bower_components/**", "/built/bundle.js*", "/*.jsx", "/main.css"};
+    private static final String[] ANT_PATTERNS_FILE = {"/bower_components/**", "/bundle.js*", "/*.jsx", "/main.css"};
     private static final String[] ANT_PATTERNS_PATH = {"/"};
 
     @Autowired

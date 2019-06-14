@@ -2,6 +2,7 @@ import React from 'react'
 import Map from '../map/Map.js'
 import SelectService from '../selectService/SelectService.js'
 import CompanyList from '../company/CompanyList.js'
+import EmployeeDashboardScreen from '../employee/EmployeeDashboardScreen.js'
 
 import client from '../../client'
 import follow from '../../follow'
@@ -74,7 +75,7 @@ export default class HomeContentPage extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="content">
                 <Map markers={this.state.offices} center={{lat: 59.95, lng: 30.33}} zoom={11}
                      onChildMouseEnter={this.onMapMarkerEnter} onChildMouseLeave={this.onMapMarkerLeave}/>
                 <SelectService services={this.state.services} onChange={this.onChangeService}/>

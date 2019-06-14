@@ -9,7 +9,7 @@ export default class DashboardNavigation extends React.Component {
                 <ul>
                     <li className="navigation-item"><Link to="/dashboard/profile">Profile</Link></li>
                     <li className="navigation-item"><Link to="/dashboard/service">Service</Link></li>
-                    <li className="navigation-item"><Link to="/dashboard/archive">Archive</Link></li>
+                    <li className="navigation-item"><Link to="/dashboard/employee">Employee</Link></li>
                 </ul>
             </div>
         )

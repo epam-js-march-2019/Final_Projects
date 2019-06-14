@@ -121,7 +121,7 @@ header div a {
     align-items: center;
     border: 1px solid grey;
     background-color: #eee;
-    height: 350px;
+    height: 350px !important;
     width: 25%;
     margin: 10px;
     border-radius: 10px;
