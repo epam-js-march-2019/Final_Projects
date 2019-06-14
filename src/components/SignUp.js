@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
+import { Redirect } from "react-router-dom";
 import PropTypes from 'prop-types';
-import { Link as RouterLink } from 'react-router-dom';
 import { withStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import { Avatar, Button, Container, Typography, Link, TextField } from '@material-ui/core';
+import { Avatar, Button, Container, Typography, TextField } from '@material-ui/core';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 
 
@@ -72,26 +72,15 @@ class SignUpForm extends Component {
   render () {
   const { classes } = this.props;
   const isRegistered = this.state.isRegistered;
-  let notice;
   if (isRegistered) {
-    notice =  <>
-      <Typography className={classes.notice} component="h1" variant="h5">
-        You have been registered.
-      </Typography>
-      <Typography className={classes.notice} component="h1" variant="h5">
-        <Link component={RouterLink} to="/sign-in" className={classes.link}>Log in.</Link>
-      </Typography>
-    </>
+    return (
+      <Redirect to='/sign-in'/>
+    )
   } else {
-      notice =  <Typography className={classes.notice} component="h1" variant="h5">
-          Join the club!
-        </Typography>;
-  }
-  return (
+    return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
-        {notice}
         <Avatar className={classes.avatar}>
           <LockOutlinedIcon />
         </Avatar>
@@ -136,9 +125,10 @@ class SignUpForm extends Component {
         </form>
       </div>      
     </Container>
-  );
+    )
  };
-}
+};
+};
 
 SignUpForm.propTypes = {
   classes: PropTypes.object.isRequired,

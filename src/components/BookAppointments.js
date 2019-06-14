@@ -11,7 +11,7 @@ import { KeyboardDatePicker, MuiPickersUtilsProvider } from '@material-ui/picker
 
 const styles = theme => ({
   root: {
-    height: '100vh',
+    minHeight: '100vh',    
   },
   container: {
     marginTop: theme.spacing(8),
@@ -25,8 +25,13 @@ const styles = theme => ({
     backgroundSize: 'cover',
     backgroundPosition: 'center',
   },
+  list: {
+    marginBottom: theme.spacing(8),
+    display: 'flex',
+    flexDirection: 'column',
+  },
   paper: {
-    margin: theme.spacing(8, 4),
+    marginBottom: theme.spacing(8, 4),
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -136,7 +141,7 @@ class BookAppointments extends Component {
             <Container >
               <Grid container>
                 <Grid item xs sm>
-                  <Paper>
+                  <Paper className={classes.list}>
                     {Object.entries(this.state.appointments).map(appointment => (
                       <List component="ul">
                         <ListItem
@@ -160,8 +165,7 @@ class BookAppointments extends Component {
                   variant="contained"
                   color="primary"
                   className={classes.submit}
-                  onClick={ this.clearList }
-                >
+                  onClick={ this.clearList }>
                   Clear List
                 </Button>
               </Grid>
@@ -181,8 +185,7 @@ class BookAppointments extends Component {
                           onChange={this.handleChange('selectedTreatment')}
                           inputProps={{
                             name: 'selectedTreatment'
-                          }}
-                      >
+                          }}>
                           <MenuItem value={'Haircut'}> Haircut </MenuItem>
                           <MenuItem value={'Color'}> Color </MenuItem>
                           <MenuItem value={'Ombre'}> Ombre </MenuItem>
@@ -212,8 +215,7 @@ class BookAppointments extends Component {
                           onChange={this.handleChange('selectedTime')}
                           inputProps={{
                             name: 'selectedTime'
-                          }}
-                      >
+                          }}>
                         <MenuItem value={'10.00'}> 10.00 </MenuItem>
                         <MenuItem value={'11.00'}> 11.00 </MenuItem>
                         <MenuItem value={'12.00'}> 12.00 </MenuItem>
@@ -232,8 +234,7 @@ class BookAppointments extends Component {
                       fullWidth
                       variant="contained"
                       color="primary"
-                      className={classes.submit}
-                    >
+                      className={classes.submit}>
                       Book me in!
                     </Button>
                   </form>
