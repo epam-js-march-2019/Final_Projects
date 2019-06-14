@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { withStyles } from '@material-ui/core/styles';
 import {Container, Paper, List, ListItem, ListItemText, Grid, Typography, Avatar, Button} from '@material-ui/core';
-import {Select, InputLabel, MenuItem, FormControl} from '@material-ui/core';
+import {Select, InputLabel, MenuItem, FormControl, FormHelperText} from '@material-ui/core';
 import AssignmentIcon from '@material-ui/icons/Assignment';
 import DateFnsUtils from '@date-io/date-fns';
 import { KeyboardDatePicker, MuiPickersUtilsProvider } from '@material-ui/pickers';
@@ -75,7 +75,8 @@ class BookAppointments extends Component {
       },
       selectedTreatment: '',
       selectedDate: new Date(),
-      selectedTime: ''
+      selectedTime: '',
+      notValidated: false
     }
 
     getAppointmentsFromLS = () =>{
@@ -106,20 +107,30 @@ class BookAppointments extends Component {
   
     handleFormSubmit = (e) => {
       e.preventDefault()
+      this.setState({ notValidated: false });
+
+    if (!this.state.selectedTreatment) {
+      console.log ("not validated")
+      this.setState({ notValidated: true });
+    } else {
       let yyyy = this.state.selectedDate.getFullYear();
       let mm = this.state.selectedDate.getMonth()+1;
       if (mm < 10) mm = '0' + mm;
       let dd = this.state.selectedDate.getDate();
       if (dd < 10) dd = '0' + dd;
+
+      let hrs = this.state.selectedTime ? ` at ${this.state.selectedTime}`: ", time to be agreed";
+
       const newAppointment = { 
         treatment: this.state.selectedTreatment,
         date: `${dd}.${mm}.${yyyy}`,
-        time: this.state.selectedTime,
+        time: hrs,
       } 
       let appointmentList = JSON.parse(localStorage.getItem('appointmentList')) || [] ;
       appointmentList.push(newAppointment);
       localStorage.setItem('appointmentList', JSON.stringify(appointmentList));
       this.getAppointmentsFromLS();
+    }
     };
 
     clearList = (e) => {
@@ -129,6 +140,7 @@ class BookAppointments extends Component {
 
     render () {
       const { classes } = this.props;
+      const { notValidated } = this.state;
       return (
         <Grid container component="main" className={classes.root}>
           <CssBaseline />
@@ -149,7 +161,7 @@ class BookAppointments extends Component {
                         >
                         <ListItemText 
                         primary={`${appointment[1].treatment}`}
-                        secondary={`${appointment[1].date} at ${appointment[1].time}`}/>
+                        secondary={`${appointment[1].date}${appointment[1].time}`}/>
                         </ListItem>
                       </List>
                     ))}
@@ -178,7 +190,7 @@ class BookAppointments extends Component {
                     Book an Appointment
                   </Typography>
                   <form className={classes.form} noValidate onSubmit={ this.handleFormSubmit }>
-                    <FormControl className={classes.formControl}>
+                    <FormControl className={classes.formControl} error={notValidated}>
                       <InputLabel htmlFor="treatment">What service would you like to book?</InputLabel>
                       <Select
                           value={this.state.selectedTreatment}
@@ -195,6 +207,7 @@ class BookAppointments extends Component {
                           <MenuItem value={'Special Occasion Hair Dressing'}> Special Occasion Hair Dressing</MenuItem>
                           <MenuItem value={'Bridal Hair Dressing'}> Bridal Hair Dressing</MenuItem>
                       </Select>
+                      {notValidated && <FormHelperText>Please select a service</FormHelperText>}
                     </FormControl>
                     <MuiPickersUtilsProvider utils={DateFnsUtils}>
                       <KeyboardDatePicker

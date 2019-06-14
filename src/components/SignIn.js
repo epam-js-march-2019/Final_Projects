@@ -5,8 +5,9 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { Avatar, Button, Container, Grid, Typography, Link } from '@material-ui/core';
-import { TextField, FormControlLabel, Checkbox  } from '@material-ui/core';
+import { FormControlLabel, Checkbox  } from '@material-ui/core';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
+import { ValidatorForm, TextValidator} from 'react-material-ui-form-validator';
 
 const styles = theme => ({
   '@global': {
@@ -89,8 +90,13 @@ class SignInForm extends Component {
               <Typography component="h1" variant="h5">
                 Sign in
               </Typography>
-              <form className={classes.form} noValidate onSubmit={this.handleFormSubmit}>
-                <TextField
+              <ValidatorForm className={classes.form}
+                ref="form"
+                onSubmit={this.handleFormSubmit}
+                onError={errors => console.log(errors)}
+                noValidate
+              >
+                <TextValidator
                   variant="outlined"
                   margin="normal"
                   required
@@ -101,8 +107,10 @@ class SignInForm extends Component {
                   autoComplete="login"
                   value={this.state.user}
                   onChange={this.handleChange}
+                  validators={['required']}
+                  errorMessages={['This field is required']}
                 />
-                <TextField
+               <TextValidator
                   variant="outlined"
                   margin="normal"
                   required
@@ -114,6 +122,8 @@ class SignInForm extends Component {
                   autoComplete="current-password"
                   value={this.state.password}
                   onChange={this.handleChange}
+                  validators={['required']}
+                  errorMessages={['This field is required']}
                 />
                 <FormControlLabel
                   control={<Checkbox name="rememberMe" value="remember" color="primary" checked={this.state.rememberMe} onChange={this.handleChange}/>}
@@ -135,7 +145,7 @@ class SignInForm extends Component {
                     </Link>
                   </Grid>            
                 </Grid>
-              </form>
+              </ValidatorForm>
             </div>      
           </Container>
     );

@@ -3,8 +3,9 @@ import { Redirect } from "react-router-dom";
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import { Avatar, Button, Container, Typography, TextField } from '@material-ui/core';
+import { Avatar, Button, Container, Typography} from '@material-ui/core';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
+import { ValidatorForm, TextValidator} from 'react-material-ui-form-validator';
 
 
 const styles = theme => ({
@@ -87,8 +88,13 @@ class SignUpForm extends Component {
         <Typography component="h1" variant="h5">
           Sign Up
         </Typography>
-        <form className={classes.form} noValidate onSubmit={this.handleFormSubmit}>
-          <TextField
+        <ValidatorForm className={classes.form}
+                ref="form"
+                onSubmit={this.handleFormSubmit}
+                onError={errors => console.log(errors)}
+                noValidate
+        >
+        <TextValidator
             variant="outlined"
             margin="normal"
             required
@@ -99,8 +105,10 @@ class SignUpForm extends Component {
             autoComplete="user"
             value={this.state.user}
             onChange={this.handleChange}
+            validators={['required']}
+            errorMessages={['This field is required']}
           />
-          <TextField
+          <TextValidator
             variant="outlined"
             margin="normal"
             required
@@ -112,6 +120,8 @@ class SignUpForm extends Component {
             autoComplete="current-password"
             value={this.state.password}
             onChange={this.handleChange}
+            validators={['required']}
+            errorMessages={['This field is required']}
           />
           <Button
             type="submit"
@@ -121,8 +131,8 @@ class SignUpForm extends Component {
             className={classes.submit}
           >
             Sign Up
-          </Button>          
-        </form>
+          </Button>
+        </ValidatorForm>
       </div>      
     </Container>
     )
