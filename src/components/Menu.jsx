@@ -1,6 +1,7 @@
-import React from 'react';
-import LoginForm from './LoginForm'
-import { Menu, Popup, List, Button, Image } from 'semantic-ui-react';
+import React from "react";
+import LoginForm from "./LoginForm";
+import { Menu, Popup, List, Button, Image } from "semantic-ui-react";
+import { Link } from "react-router-dom";
 
 const CartComponent = ({ title, id, image, removeFromCart }) => (
   <List selection divided verticalAlign="middle">
@@ -19,11 +20,9 @@ const CartComponent = ({ title, id, image, removeFromCart }) => (
 const MenuComponent = ({ totalPrice, count, items }) => (
   <Menu>
     <Menu.Item name="browse" onClick={this.handleItemClick}>
-      Магазин книг
+		{<Link to={"/"} color='white'>Bookshop</Link>}
     </Menu.Item>
-		<LoginForm>
-      Login
-    </LoginForm>
+    <LoginForm>Login</LoginForm>
 
     <Menu.Menu position="right">
       <Menu.Item name="signup" onClick={this.handleItemClick}>
@@ -36,7 +35,9 @@ const MenuComponent = ({ totalPrice, count, items }) => (
             Корзина (<b>{count}</b>)
           </Menu.Item>
         }
-        content={items.map(book => <CartComponent {...book} />)}
+        content={items.map(book => (
+          <CartComponent {...book} />
+        ))}
         on="click"
         hideOnScroll
       />
