@@ -3,7 +3,6 @@ import TrekkingShortDescription from '../TrekkingShortDescription/index.js'
 import {Link} from "react-router-dom";
 
 import "./style.css"
-import "../../style/style.css";
 
 class TrekkingCard extends Component {
 

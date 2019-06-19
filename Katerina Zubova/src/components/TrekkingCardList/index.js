@@ -13,9 +13,12 @@ function TrekkingCardList (props) {
     );
 
     return (
-        <ul className={"card-list"}>
-            {cardComponents}
-        </ul>
+        <div className={"card-list__container"}>
+            <ul className={"card-list"}>
+                {cardComponents}
+            </ul>
+            <button className={"card-list-button button"}>Показать ещё</button>
+        </div>
     )
 }
 

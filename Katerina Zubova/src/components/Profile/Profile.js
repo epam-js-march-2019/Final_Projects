@@ -4,7 +4,6 @@ import {Link} from 'react-router-dom';
 import {trekkingAPI} from '../../trekkingApi'
 
 import "./style.css";
-import "../../style/style.css";
 
 class Profile extends Component {
 

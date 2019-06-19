@@ -4,7 +4,6 @@ import TrekkingShortDescription from '../TrekkingShortDescription';
 import {trekkingAPI} from '../../trekkingApi'
 
 import "./style.css"
-import "../../style/style.css";
 
 class TrekkingArticle extends Component {
 

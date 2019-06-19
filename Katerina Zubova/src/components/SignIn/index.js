@@ -3,7 +3,6 @@ import React from 'react'
 import { Redirect } from 'react-router-dom';
 
 import "./style.css";
-import "../../style/style.css";
 
 class SignIn extends React.Component {
 
