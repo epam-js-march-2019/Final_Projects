@@ -6,13 +6,21 @@ import "./style.css"
 
 class SearchMenu extends Component {
 
-    state = {
-        region: "",
-        type: ""
-    };
+    constructor (props) {
+
+        super(props);
+
+        this.state = {
+            region: "",
+            type: ""
+        };
+
+    }
+
 
     render () {
-        const cards = trekkingAPI.all();
+        const cards=trekkingAPI.all();
+
         return (
             <div className={"search-menu"}>
                 <div className={"search-menu__background"}>
@@ -28,7 +36,7 @@ class SearchMenu extends Component {
 
     updateData = (value, name) => {
         this.setState({ [name]: value })
-    }
+    };
 
     sortCards = () => {
 
@@ -39,10 +47,9 @@ class SearchMenu extends Component {
         const sortedCards = cards.filter ((card)=>  {
             return ((card.region===region || region==='') &&
                 (card.type===type || type===''))
-        })
+        });
 
 
-        console.log(sortedCards);
         this.props.displayCards(sortedCards);
     }
 }

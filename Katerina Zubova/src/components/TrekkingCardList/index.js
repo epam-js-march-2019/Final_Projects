@@ -1,25 +1,63 @@
-import React from 'react'
+import React, {Component}  from 'react'
 import TrekkingCard from '../TrekkingCard'
 
 import "./style.css"
 
-function TrekkingCardList (props) {
-    const {cards}=props;
 
-    console.log(props);
+class TrekkingCardList extends Component  {
 
-    const cardComponents = cards.map(item =>
-        <li key={item.id} className={"card-list__item"}>< TrekkingCard card={item} /></li>
-    );
+    constructor (props) {
+        super(props);
 
-    return (
-        <div className={"card-list__container"}>
-            <ul className={"card-list"}>
-                {cardComponents}
-            </ul>
-            <button className={"card-list-button button"}>Показать ещё</button>
-        </div>
-    )
+        const {cards}=this.props;
+
+        this.state = {
+            visibleCards: cards.slice(0, 4),
+            prevPropsCards: cards
+        }
+
+    }
+
+
+    static getDerivedStateFromProps(props, state) {
+        if(props.cards!== state.prevPropsCards) {
+            const {cards}=props;
+            console.log (cards, "getDerived");
+            return({visibleCards: cards.slice(0, 4), prevPropsCards: cards});
+        }
+        return null;
+    }
+
+    render () {
+
+        const {visibleCards}=this.state;
+        const {cards}=this.props;
+
+        const cardComponents = visibleCards.map(item =>
+            <li key={item.id} className={"card-list__item"}>< TrekkingCard card={item}/></li>
+        );
+
+        const button = visibleCards.length!==cards.length ?
+            <button className={"card-list-button button"} onClick={this.handleClick}>Показать ещё</button> :
+            null;
+
+        return (
+            <div className={"card-list"}>
+                <ul className={"card-list__inner"}>
+                    {cardComponents}
+                </ul>
+                {button}
+            </div>
+        )
+
+    }
+
+    handleClick = () => {
+        const {cards}=this.props;
+        const {visibleCards}=this.state;
+
+        this.setState({visibleCards: cards.slice(0, visibleCards.length+4)});
+    }
 }
 
 

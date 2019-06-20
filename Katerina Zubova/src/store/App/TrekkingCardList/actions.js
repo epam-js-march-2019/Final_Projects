@@ -6,4 +6,4 @@ export const displayCards = (cards) => {
         type: ACTION_TYPES.DISPLAY_TREKKING_CARDS,
         cards: cards
     }
-}
+};
